@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dime_16dp"
+    android:layout_marginTop="@dimen/dime_16dp"
+    android:layout_marginEnd="@dimen/dime_16dp"
+    android:background="@drawable/shape_home_sence"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_16dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:text="@string/house_task_bolck_negative"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dime_16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dime_1dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:background="@color/home_sence_3" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/bolck_negative_electric_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_negative_electric"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/bolck_negative_electric_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/bolck_negative_electric_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_negative_refuse"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/negative_refuse_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/has_or_no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/bolck_negative_sound_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_negative_sound"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/bolck_negative_sound_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/bolck_negative_sound_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/bolck_negative_gas_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_negative_gas"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/bolck_negative_gas_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/bolck_negative_gas_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/bolck_negative_light_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_negative_light"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/bolck_negative_light_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/bolck_negative_light_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/bolck_negative_wenhua_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_negative_wenhua"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/bolck_negative_wenhua_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/bolck_negative_wenhua_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+</LinearLayout>

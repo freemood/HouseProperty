@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dime_16dp"
+    android:layout_marginTop="@dimen/dime_16dp"
+    android:layout_marginEnd="@dimen/dime_16dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@drawable/shape_home_sence"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_16dp"
+        android:layout_marginTop="@dimen/dime_16dp"
+        android:layout_marginEnd="@dimen/dime_16dp"
+        android:background="@drawable/shape_home_sence"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginTop="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_info"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dime_1dp"
+            android:layout_marginTop="@dimen/dime_8dp"
+            android:background="@color/home_sence_3" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_bolck_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/bolck_number_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="number|text"
+            android:padding="@dimen/dime_8dp"
+            
+            
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/bolck_cellnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_bolck_cellnumber"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/bolck_cellnumber_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="number"
+            android:padding="@dimen/dime_8dp"
+            
+            
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_household"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/household_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="none"
+            
+            
+            android:padding="@dimen/dime_8dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_spacing"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/details_spacing_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="number"
+            android:padding="@dimen/dime_8dp"
+            android:singleLine="true"
+            
+            
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_centerVertical="true"
+            android:text="@string/house_task_details_orientation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/details_orientation_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="text"
+            android:padding="@dimen/dime_8dp"
+            
+            
+
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_commercial"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/details_commercial_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="number"
+            android:padding="@dimen/dime_8dp"
+            android:singleLine="true"
+            
+            
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp"
+            tools:layout_centerVertical="false" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_commercial_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/commercial_number1_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="text"
+            android:padding="@dimen/dime_8dp"
+            
+            
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_top_szc"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/details_top_szc_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="text"
+            android:padding="@dimen/dime_8dp"
+            
+            
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_zz_szc"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/details_zz_szc_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="text"
+            
+            
+            android:padding="@dimen/dime_8dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_maintain"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/sheshi_level_one_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/sanitation_array"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_wall"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/details_wall_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/has_or_no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_top"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/details_top_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/top_array"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_structure_attribute_scenery"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/details_scenery_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/has_or_no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/bolck_negative_tesc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_negative_tesc"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/bolck_negative_tesc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/bolck_negative_tesc_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+</LinearLayout>

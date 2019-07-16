@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/back_title_text" />
+
+    <TextView
+        android:id="@+id/dealt_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_16dp"
+        android:layout_marginEnd="@dimen/dime_16dp"
+        android:padding="@dimen/dime_8dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="@dimen/dime_16sp" />
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

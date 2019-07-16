@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="device_name">
+        <item>视频监控</item>
+        <item>空气质量调节</item>
+        <item>热水器</item>
+        <item>光线调节</item>
+        <item>扫地机器人</item>
+        <item>智能开关</item>
+        <item>智能插座</item>
+        <item>机器手</item>
+        <item>环境监控</item>
+        <item>智能安防</item>
+        <item>定位器</item>
+        <item>智能门锁</item>
+    </string-array>
+    <string-array name="grade_level">
+        <item>一级</item>
+        <item>二级</item>
+        <item>三级</item>
+        <item>四级</item>
+        <item>五级</item>
+        <item>六级</item>
+        <item>七级</item>
+    </string-array>
+    <string-array name="has_or_no">
+        <item>有</item>
+        <item>无</item>
+    </string-array>
+
+    <string-array name="yes_or_no">
+        <item>是</item>
+        <item>否</item>
+    </string-array>
+
+    <string-array name="sanitation_array">
+        <item>优</item>
+        <item>良</item>
+        <item>中</item>
+        <item>差</item>
+    </string-array>
+    <string-array name="orientation_array">
+        <item>东</item>
+        <item>南</item>
+        <item>西</item>
+        <item>北</item>
+        <item>东南</item>
+        <item>东北</item>
+        <item>西北</item>
+        <item>西南</item>
+    </string-array>
+
+    <string-array name="wall_array">
+        <item>外墙</item>
+        <item>保温</item>
+        <item>干挂</item>
+        <item>幕墙</item>
+    </string-array>
+    <string-array name="top_array">
+        <item>坡屋面</item>
+        <item>阁楼</item>
+        <item>平顶</item>
+    </string-array>
+    <string-array name="house_array">
+        <item>普通商品房</item>
+        <item>商住两用</item>
+        <item>经济适用房</item>
+        <item>自建房</item>
+        <item>拆迁安置</item>
+        <item>廉租房</item>
+        <item>养老住宅</item>
+    </string-array>
+    <string-array name="house_dong_array">
+        <item>别墅</item>
+        <item>洋房</item>
+        <item>多层</item>
+        <item>小高层</item>
+        <item>高层</item>
+        <item>超高层</item>
+    </string-array>
+
+    <string-array name="sheshi_level_one_array">
+        <item>体育休闲服务</item>
+        <item>风景名胜</item>
+        <item>科教文化服务</item>
+    </string-array>
+
+    <string-array name="sheshi_level_all_array">
+        <item>080000;体育休闲服务,体育休闲服务场所,体育休闲服务场所</item>
+        <item>080100;体育休闲服务,运动场馆,运动场所</item>
+        <item>080101;体育休闲服务,运动场馆,综合体育馆</item>
+        <item>080102;体育休闲服务,运动场馆,保龄球馆</item>
+        <item>080103;体育休闲服务,运动场馆,网球场</item>
+        <item>080104;体育休闲服务,运动场馆,篮球场馆</item>
+        <item>080105;体育休闲服务,运动场馆,足球场</item>
+        <item>080106;体育休闲服务,运动场馆,滑雪场</item>
+        <item>080107;体育休闲服务,运动场馆,溜冰场</item>
+        <item>080108;体育休闲服务,运动场馆,户外健身场所</item>
+        <item>080109;体育休闲服务,运动场馆,海滨浴场</item>
+        <item>080110;体育休闲服务,运动场馆,游泳馆</item>
+        <item>080111;体育休闲服务,运动场馆,健身中心</item>
+        <item>080112;体育休闲服务,运动场馆,乒乓球馆</item>
+        <item>080113;体育休闲服务,运动场馆,台球厅</item>
+        <item>080114;体育休闲服务,运动场馆,壁球场</item>
+        <item>080115;体育休闲服务,运动场馆,马术俱乐部</item>
+        <item>080116;体育休闲服务,运动场馆,赛马场</item>
+        <item>080117;体育休闲服务,运动场馆,橄榄球场</item>
+        <item>080118;体育休闲服务,运动场馆,羽毛球场</item>
+        <item>080119;体育休闲服务,运动场馆,跆拳道场馆</item>
+        <item>080200;体育休闲服务,高尔夫相关,高尔夫相关</item>
+        <item>080201;体育休闲服务,高尔夫相关,高尔夫球场</item>
+        <item>080202;体育休闲服务,高尔夫相关,高尔夫练习场</item>
+        <item>080300;体育休闲服务,娱乐场所,娱乐场所</item>
+        <item>080301;体育休闲服务,娱乐场所,夜总会</item>
+        <item>080302;体育休闲服务,娱乐场所,KTV</item>
+        <item>080303;体育休闲服务,娱乐场所,迪厅</item>
+        <item>080304;体育休闲服务,娱乐场所,酒吧</item>
+        <item>080305;体育休闲服务,娱乐场所,游戏厅</item>
+        <item>080306;体育休闲服务,娱乐场所,棋牌室</item>
+        <item>080307;体育休闲服务,娱乐场所,博彩中心</item>
+        <item>080308;体育休闲服务,娱乐场所,网吧</item>
+        <item>080400;体育休闲服务,度假疗养场所,度假疗养场所</item>
+        <item>080401;体育休闲服务,度假疗养场所,度假村</item>
+        <item>080402;体育休闲服务,度假疗养场所,疗养院</item>
+        <item>080500;体育休闲服务,休闲场所,休闲场所</item>
+        <item>080501;体育休闲服务,休闲场所,游乐场</item>
+        <item>080502;体育休闲服务,休闲场所,垂钓园</item>
+        <item>080503;体育休闲服务,休闲场所,采摘园</item>
+        <item>080504;体育休闲服务,休闲场所,露营地</item>
+        <item>080505;体育休闲服务,休闲场所,水上活动中心</item>
+        <item>080600;体育休闲服务,影剧院,影剧院相关</item>
+        <item>080601;体育休闲服务,影剧院,电影院</item>
+        <item>080602;体育休闲服务,影剧院,音乐厅</item>
+        <item>080603;体育休闲服务,影剧院,剧场</item>
+        <item>110000;风景名胜,风景名胜相关,旅游景点</item>
+        <item>110100;风景名胜,公园广场,公园广场</item>
+        <item>110101;风景名胜,公园广场,公园</item>
+        <item>110102;风景名胜,公园广场,动物园</item>
+        <item>110103;风景名胜,公园广场,植物园</item>
+        <item>110104;风景名胜,公园广场,水族馆</item>
+        <item>110105;风景名胜,公园广场,城市广场</item>
+        <item>110106;风景名胜,公园广场,公园内部设施</item>
+        <item>110200;风景名胜,风景名胜,风景名胜</item>
+        <item>110201;风景名胜,风景名胜,世界遗产</item>
+        <item>110202;风景名胜,风景名胜,国家级景点</item>
+        <item>110203;风景名胜,风景名胜,省级景点</item>
+        <item>110204;风景名胜,风景名胜,纪念馆</item>
+        <item>110205;风景名胜,风景名胜,寺庙道观</item>
+        <item>110206;风景名胜,风景名胜,教堂</item>
+        <item>110207;风景名胜,风景名胜,回教寺</item>
+        <item>110208;风景名胜,风景名胜,海滩</item>
+        <item>110209;风景名胜,风景名胜,观景点</item>
+        <item>140000;科教文化服务,科教文化场所,科教文化场所</item>
+        <item>140100;科教文化服务,博物馆,博物馆</item>
+        <item>140101;科教文化服务,博物馆,奥迪博物馆</item>
+        <item>140102;科教文化服务,博物馆,梅赛德斯-奔驰博物馆</item>
+        <item>140200;科教文化服务,展览馆,展览馆</item>
+        <item>140201;科教文化服务,展览馆,室内展位</item>
+        <item>140300;科教文化服务,会展中心,会展中心</item>
+        <item>140400;科教文化服务,美术馆,美术馆</item>
+        <item>140500;科教文化服务,图书馆,图书馆</item>
+        <item>140600;科教文化服务,科技馆,科技馆</item>
+        <item>140700;科教文化服务,天文馆,天文馆</item>
+        <item>140800;科教文化服务,文化宫,文化宫</item>
+        <item>140900;科教文化服务,档案馆,档案馆</item>
+        <item>141000;科教文化服务,文艺团体,文艺团体</item>
+        <item>141100;科教文化服务,传媒机构,传媒机构</item>
+        <item>141101;科教文化服务,传媒机构,电视台</item>
+        <item>141102;科教文化服务,传媒机构,电台</item>
+        <item>141103;科教文化服务,传媒机构,报社</item>
+        <item>141104;科教文化服务,传媒机构,杂志社</item>
+        <item>141105;科教文化服务,传媒机构,出版社</item>
+        <item>141200;科教文化服务,学校,学校</item>
+        <item>141201;科教文化服务,学校,高等院校</item>
+        <item>141202;科教文化服务,学校,中学</item>
+        <item>141203;科教文化服务,学校,小学</item>
+        <item>141204;科教文化服务,学校,幼儿园</item>
+        <item>141205;科教文化服务,学校,成人教育</item>
+        <item>141206;科教文化服务,学校,职业技术学校</item>
+        <item>141207;科教文化服务,学校,学校内部设施</item>
+        <item>141300;科教文化服务,科研机构,科研机构</item>
+        <item>141400;科教文化服务,培训机构,培训机构</item>
+        <item>141500;科教文化服务,驾校,驾校</item>
+    </string-array>
+
+</resources>

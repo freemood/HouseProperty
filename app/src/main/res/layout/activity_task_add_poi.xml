@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/back_title_text" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/home_sence_3"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dime_16dp"
+                android:layout_marginTop="@dimen/dime_16dp"
+                android:layout_marginEnd="@dimen/dime_16dp"
+                android:background="@drawable/shape_home_sence"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_16dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:text="@string/house_details_base"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dime_16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dime_1dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:background="@color/home_sence_3" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:layout_marginBottom="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:id="@+id/task_area_name_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_task_details_bolck_qu"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <TextView
+                        android:id="@+id/house_task_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:layout_marginBottom="@dimen/dime_8dp"
+                        android:layout_toEndOf="@+id/task_area_name_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dime_16dp"
+                android:layout_marginTop="@dimen/dime_16dp"
+                android:layout_marginEnd="@dimen/dime_16dp"
+                android:background="@drawable/shape_home_sence"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_16dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:text="@string/house_bulu_sheshi"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dime_16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dime_1dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:background="@color/home_sence_3" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:id="@+id/sheshi_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_bulu_sheshi_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <EditText
+                        android:id="@+id/sheshi_name_et"
+                        android:layout_width="@dimen/dime_140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_16dp"
+                        android:layout_marginEnd="@dimen/dime_8dp"
+                        android:background="@drawable/shape_dialog_secen"
+                        android:inputType="text"
+                        android:padding="@dimen/dime_8dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_bulu_sheshi_adress"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <EditText
+                        android:id="@+id/sheshi_adress_et"
+                        android:layout_width="@dimen/dime_140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_16dp"
+                        android:layout_marginEnd="@dimen/dime_8dp"
+                        android:background="@drawable/shape_dialog_secen"
+                        android:inputType="text"
+                        android:padding="@dimen/dime_8dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_bulu_sheshi_sheng"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <EditText
+                        android:id="@+id/sheshi_sheng_et"
+                        android:layout_width="@dimen/dime_140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_16dp"
+                        android:layout_marginEnd="@dimen/dime_8dp"
+                        android:background="@drawable/shape_dialog_secen"
+                        android:inputType="text"
+                        android:padding="@dimen/dime_8dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_bulu_sheshi_city"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <EditText
+                        android:id="@+id/sheshi_city_et"
+                        android:layout_width="@dimen/dime_140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_16dp"
+                        android:layout_marginEnd="@dimen/dime_8dp"
+                        android:background="@drawable/shape_dialog_secen"
+                        android:inputType="text"
+                        android:padding="@dimen/dime_8dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_bulu_sheshi_qu"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <EditText
+                        android:id="@+id/sheshi_qu_et"
+                        android:layout_width="@dimen/dime_140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_16dp"
+                        android:layout_marginEnd="@dimen/dime_8dp"
+                        android:background="@drawable/shape_dialog_secen"
+                        android:inputType="text"
+                        android:padding="@dimen/dime_8dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+                <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dime_8dp"
+                android:layout_marginTop="@dimen/dime_8dp"
+                android:layout_marginEnd="@dimen/dime_8dp"
+                android:background="@drawable/shape_dialog_secen"
+                android:paddingTop="@dimen/dime_8dp"
+                android:paddingBottom="@dimen/dime_8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:text="@string/house_bulu_sheshi_level_one"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dime_16sp" />
+
+                <Spinner
+                    android:id="@+id/sheshi_level_one_spinner"
+                    android:layout_width="@dimen/dime_140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:entries="@array/sanitation_array"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dime_16sp" />
+            </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_bulu_sheshi_level_two"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <Spinner
+                        android:id="@+id/sheshi_level_two_spinner"
+                        android:layout_width="@dimen/dime_140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:layout_marginBottom="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_bulu_sheshi_level_three"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <Spinner
+                        android:id="@+id/sheshi_level_three_spinner"
+                        android:layout_width="@dimen/dime_140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

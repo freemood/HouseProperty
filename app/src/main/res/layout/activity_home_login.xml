@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_line_3"
+    android:orientation="vertical">
+
+    <include layout="@layout/back_title" />
+
+    <TextView
+        android:id="@+id/tv_login_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dime_16dp"
+        android:layout_marginTop="@dimen/dime_16dp"
+        android:text="@string/login_password"
+        android:textColor="@color/home_black"
+        android:textSize="@dimen/dime_28sp" />
+
+    <include layout="@layout/inclound_home_login_name" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_32dp"
+            android:layout_marginStart="@dimen/dime_32dp"
+            android:layout_marginTop="@dimen/dime_32dp"
+            android:background="@mipmap/btn_login"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dime_16sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dime_16dp"
+            android:text="@string/login_agreement"
+            android:textColor="@color/home_grgray_1"
+            android:textSize="@dimen/dime_13sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
