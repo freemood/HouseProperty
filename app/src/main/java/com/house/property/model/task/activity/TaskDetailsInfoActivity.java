@@ -590,106 +590,106 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
             return;
         }
 
-        if (showNullToast(appearanceLotStr, getResources().getString(R.string.house_details_appearance_lot))) {
-            return;
-        }
-        if (showNullToast(appearanceExitStr, getResources().getString(R.string.house_details_appearance_exit))) {
-            return;
-        }
-        if (showNullToast(appearanceEducationStr, getResources().getString(R.string.house_details_appearance_education))) {
-            return;
-        }
-        if (showNullToast(attributeEnclosureStr, getResources().getString(R.string.house_details_appearance_enclosure))) {
-            return;
-        }
-        if (showNullToast(attributeSceneryStr, getResources().getString(R.string.house_details_appearance_scenery))) {
-            return;
-        }
+//        if (showNullToast(appearanceLotStr, getResources().getString(R.string.house_details_appearance_lot))) {
+//            return;
+//        }
+//        if (showNullToast(appearanceExitStr, getResources().getString(R.string.house_details_appearance_exit))) {
+//            return;
+//        }
+//        if (showNullToast(appearanceEducationStr, getResources().getString(R.string.house_details_appearance_education))) {
+//            return;
+//        }
+//        if (showNullToast(attributeEnclosureStr, getResources().getString(R.string.house_details_appearance_enclosure))) {
+//            return;
+//        }
+//        if (showNullToast(attributeSceneryStr, getResources().getString(R.string.house_details_appearance_scenery))) {
+//            return;
+//        }
 //        if (showNullToast(xiaoshouStateSpinnerStr, getResources().getString(R.string.house_task_bolck_residential_xiaoshou))) {
 //            return;
 //        }
-        if (showNullToast(attributeHouseStr, getResources().getString(R.string.house_details_appearance_house_attribute))) {
-            return;
-        }
-        if (showNullToast(appearancehouseChanquannianxianTvStr, getResources().getString(R.string.house_details_appearance_house_attribute_chanquannianxian))) {
-            return;
-        }
-        if (showNullToast(attributeHouselandStr, getResources().getString(R.string.house_details_appearance_house_attribute_land))) {
-            return;
-        }
-        if (showNullToast(attributeBuileStr, getResources().getString(R.string.house_details_appearance_house_attribute_buile_structure))) {
-            return;
-        }
-        if (showNullToast(attributeBuileTypeStr, getResources().getString(R.string.house_details_appearance_house_attribute_buile_type))) {
-            return;
-        }
-        if (showNullToast(attributeTradingStr, getResources().getString(R.string.house_details_appearance_house_attribute_trading))) {
-            return;
-        }
-        if (showNullToast(attributeroTallandStr, getResources().getString(R.string.house_details_appearance_house_attribute_totalland))) {
-            return;
-        }
-        if (showNullToast(attributeTotalhouseStr, getResources().getString(R.string.house_details_appearance_house_attribute_totalhouse))) {
-            return;
-        }
-        if (showNullToast(attributeApartmentStr, getResources().getString(R.string.house_details_appearance_house_attribute_apartment))) {
-            return;
-        }
-        if (showNullToast(propertyRoadSpinnerStr, getResources().getString(R.string.house_details_appearance_house_attribute_road))) {
-            return;
-        }
-        if ("请选择".equals(appearanceHouseTimeStr)) {
-            ToastUtils.showToast(this, "请选择建筑年代");
-            return;
-        }
+//        if (showNullToast(attributeHouseStr, getResources().getString(R.string.house_details_appearance_house_attribute))) {
+//            return;
+//        }
+//        if (showNullToast(appearancehouseChanquannianxianTvStr, getResources().getString(R.string.house_details_appearance_house_attribute_chanquannianxian))) {
+//            return;
+//        }
+//        if (showNullToast(attributeHouselandStr, getResources().getString(R.string.house_details_appearance_house_attribute_land))) {
+//            return;
+//        }
+//        if (showNullToast(attributeBuileStr, getResources().getString(R.string.house_details_appearance_house_attribute_buile_structure))) {
+//            return;
+//        }
+//        if (showNullToast(attributeBuileTypeStr, getResources().getString(R.string.house_details_appearance_house_attribute_buile_type))) {
+//            return;
+//        }
+//        if (showNullToast(attributeTradingStr, getResources().getString(R.string.house_details_appearance_house_attribute_trading))) {
+//            return;
+//        }
+//        if (showNullToast(attributeroTallandStr, getResources().getString(R.string.house_details_appearance_house_attribute_totalland))) {
+//            return;
+//        }
+//        if (showNullToast(attributeTotalhouseStr, getResources().getString(R.string.house_details_appearance_house_attribute_totalhouse))) {
+//            return;
+//        }
+//        if (showNullToast(attributeApartmentStr, getResources().getString(R.string.house_details_appearance_house_attribute_apartment))) {
+//            return;
+//        }
+//        if (showNullToast(propertyRoadSpinnerStr, getResources().getString(R.string.house_details_appearance_house_attribute_road))) {
+//            return;
+//        }
+//        if ("请选择".equals(appearanceHouseTimeStr)) {
+//            ToastUtils.showToast(this, "请选择建筑年代");
+//            return;
+//        }
 
-        if (showNullToast(attributeCommunicationStr, getResources().getString(R.string.house_details_appearance_house_attribute_communication))) {
-            return;
-        }
-        if (showNullToast(bolckResidentialHeatSpinnerStr, getResources().getString(R.string.house_task_bolck_residential_heat))) {
-            return;
-        }
-        if (showNullToast(bolckResidentialGasSpinnerStr, getResources().getString(R.string.house_task_bolck_residential_gas))) {
-            return;
-        }
-        if (showNullToast(bolckResidentialElectricStr, getResources().getString(R.string.house_task_bolck_residential_electric))) {
-            return;
-        }
-        if (showNullToast(bolckResidentialWaterStr, getResources().getString(R.string.house_task_bolck_residential_water))) {
-            return;
-        }
+//        if (showNullToast(attributeCommunicationStr, getResources().getString(R.string.house_details_appearance_house_attribute_communication))) {
+//            return;
+//        }
+//        if (showNullToast(bolckResidentialHeatSpinnerStr, getResources().getString(R.string.house_task_bolck_residential_heat))) {
+//            return;
+//        }
+//        if (showNullToast(bolckResidentialGasSpinnerStr, getResources().getString(R.string.house_task_bolck_residential_gas))) {
+//            return;
+//        }
+//        if (showNullToast(bolckResidentialElectricStr, getResources().getString(R.string.house_task_bolck_residential_electric))) {
+//            return;
+//        }
+//        if (showNullToast(bolckResidentialWaterStr, getResources().getString(R.string.house_task_bolck_residential_water))) {
+//            return;
+//        }
 
         if (showNullToast(propertyBrandStr, getResources().getString(R.string.house_details_appearance_property_brand))) {
             return;
         }
-        if (showNullToast(propertyChargingStr, getResources().getString(R.string.house_details_appearance_property_charging))) {
-            return;
-        }
-        if (showNullToast(propertyGradeSpinnerStr, getResources().getString(R.string.house_details_appearance_property_grade))) {
-            return;
-        }
-        if (showNullToast(propertyCardSpinnerStr, getResources().getString(R.string.house_details_appearance_property_card))) {
-            return;
-        }
-        if (showNullToast(propertyControlSpinnerStr, getResources().getString(R.string.house_details_appearance_property_control))) {
-            return;
-        }
-        if (showNullToast(propertyFacelSpinnerStr, getResources().getString(R.string.house_details_appearance_property_face))) {
-            return;
-        }
-        if (showNullToast(propertyTalkbacklSpinnerStr, getResources().getString(R.string.house_details_appearance_property_talkback))) {
-            return;
-        }
-        if (showNullToast(propertyCloseSpinnerStr, getResources().getString(R.string.house_details_appearance_property_close))) {
-            return;
-        }
-        if (showNullToast(propertySanitationSpinnerStr, getResources().getString(R.string.house_details_appearance_property_sanitation))) {
-            return;
-        }
+//        if (showNullToast(propertyChargingStr, getResources().getString(R.string.house_details_appearance_property_charging))) {
+//            return;
+//        }
+//        if (showNullToast(propertyGradeSpinnerStr, getResources().getString(R.string.house_details_appearance_property_grade))) {
+//            return;
+//        }
+//        if (showNullToast(propertyCardSpinnerStr, getResources().getString(R.string.house_details_appearance_property_card))) {
+//            return;
+//        }
+//        if (showNullToast(propertyControlSpinnerStr, getResources().getString(R.string.house_details_appearance_property_control))) {
+//            return;
+//        }
+//        if (showNullToast(propertyFacelSpinnerStr, getResources().getString(R.string.house_details_appearance_property_face))) {
+//            return;
+//        }
+//        if (showNullToast(propertyTalkbacklSpinnerStr, getResources().getString(R.string.house_details_appearance_property_talkback))) {
+//            return;
+//        }
+//        if (showNullToast(propertyCloseSpinnerStr, getResources().getString(R.string.house_details_appearance_property_close))) {
+//            return;
+//        }
+//        if (showNullToast(propertySanitationSpinnerStr, getResources().getString(R.string.house_details_appearance_property_sanitation))) {
+//            return;
+//        }
 
-        if (showNullToast(appearancePropertySecurityStr, getResources().getString(R.string.house_details_appearance_property_security))) {
-            return;
-        }
+//        if (showNullToast(appearancePropertySecurityStr, getResources().getString(R.string.house_details_appearance_property_security))) {
+//            return;
+//        }
         CommunityDetailsBean communityDetailsBean = commBean;
         communityDetailsBean.setCommName(houseTaskNameStr);
         communityDetailsBean.setCommAddress(houseTaskAdressStr);

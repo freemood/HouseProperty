@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/dime_16dp"
@@ -69,6 +69,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,6 +105,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -227,6 +229,73 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_residential_lvsejianzxingji"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/bolck_residential_lvsejianzxingji_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/has_or_no"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/appearance_kejizhuzhai_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_house_attribute_kejizhuzhai"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/appearance_kejizhuzhai_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/appearance_kejizhuzhai_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
             android:text="@string/house_details_appearance_house_attribute_trading"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
@@ -242,8 +311,8 @@
             android:background="@drawable/shape_dialog_secen"
             android:inputType="text"
             android:padding="@dimen/dime_8dp"
-            
-           
+
+
             android:singleLine="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
@@ -278,8 +347,8 @@
             android:layout_marginEnd="@dimen/dime_8dp"
             android:background="@drawable/shape_dialog_secen"
             android:inputType="text"
-            
-           
+
+
             android:padding="@dimen/dime_8dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -315,8 +384,8 @@
             android:layout_marginEnd="@dimen/dime_8dp"
             android:background="@drawable/shape_dialog_secen"
             android:inputType="number"
-            
-           
+
+
             android:padding="@dimen/dime_8dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -353,8 +422,8 @@
             android:background="@drawable/shape_dialog_secen"
             android:inputType="text"
             android:padding="@dimen/dime_8dp"
-            
-           
+
+
             android:singleLine="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
@@ -497,7 +566,8 @@
         android:layout_marginEnd="@dimen/dime_8dp"
         android:background="@drawable/shape_dialog_secen"
         android:paddingTop="@dimen/dime_8dp"
-        android:paddingBottom="@dimen/dime_8dp">
+        android:paddingBottom="@dimen/dime_8dp"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/bolck_residential_road_tv"
@@ -688,6 +758,114 @@
             android:inputType="text"
             android:padding="@dimen/dime_8dp"
             android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/appearance_peijiansheshi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_house_attribute_peijiansheshi"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/appearance_peijiansheshi_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/appearance_peijiansheshi_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/appearance_xiaofangsheshi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_house_attribute_xiaofangsheshi"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/appearance_xiaofangsheshi_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/appearance_xiaofangsheshi_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/appearance_daoluzhuangkuang_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_house_attribute_daoluzhuangkuang"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/appearance_daoluzhuangkuang_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/appearance_daoluzhuangkuang_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
     </RelativeLayout>
