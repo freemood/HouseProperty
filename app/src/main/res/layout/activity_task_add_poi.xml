@@ -243,6 +243,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/dime_16sp" />
                 </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -277,36 +278,6 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/dime_16sp" />
                 </RelativeLayout>
-                <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dime_8dp"
-                android:layout_marginTop="@dimen/dime_8dp"
-                android:layout_marginEnd="@dimen/dime_8dp"
-                android:background="@drawable/shape_dialog_secen"
-                android:paddingTop="@dimen/dime_8dp"
-                android:paddingBottom="@dimen/dime_8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dime_8dp"
-                    android:text="@string/house_bulu_sheshi_level_one"
-                    android:layout_centerVertical="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/dime_16sp" />
-
-                <Spinner
-                    android:id="@+id/sheshi_level_one_spinner"
-                    android:layout_width="@dimen/dime_140dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/dime_8dp"
-                    android:entries="@array/sanitation_array"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/dime_16sp" />
-            </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -321,9 +292,40 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_bulu_sheshi_level_one"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <Spinner
+                        android:id="@+id/sheshi_level_one_spinner"
+                        android:layout_width="@dimen/dime_140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:entries="@array/sanitation_array"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/dime_8dp"
                         android:text="@string/house_bulu_sheshi_level_two"
-                        android:layout_centerVertical="true"
                         android:textColor="@color/black"
                         android:textSize="@dimen/dime_16sp" />
 
@@ -352,9 +354,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
                         android:layout_marginStart="@dimen/dime_8dp"
                         android:text="@string/house_bulu_sheshi_level_three"
-                        android:layout_centerVertical="true"
                         android:textColor="@color/black"
                         android:textSize="@dimen/dime_16sp" />
 
@@ -370,6 +372,94 @@
                 </RelativeLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dime_16dp"
+                android:background="@drawable/shape_home_sence"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:background="@drawable/shape_home_sence"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:layout_marginTop="@dimen/dime_8dp"
+                        android:text="@string/house_details_appearance_other"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dime_1dp"
+                        android:layout_marginTop="@dimen/dime_8dp"
+                        android:background="@color/home_sence_3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_8dp"
+                    android:layout_marginTop="@dimen/dime_8dp"
+                    android:layout_marginEnd="@dimen/dime_8dp"
+                    android:layout_marginBottom="@dimen/dime_8dp"
+                    android:background="@drawable/shape_dialog_secen"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/dime_8dp"
+                    android:paddingBottom="@dimen/dime_8dp">
+
+                    <TextView
+                        android:id="@+id/house_poi_sheshi_photos_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/dime_8dp"
+                        android:text="@string/house_poi_sheshi_photos"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dime_16sp" />
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dime_8dp"
+                        android:layout_weight="1"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/id_gallery_poi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="horizontal" />
+                    </HorizontalScrollView>
+
+                    <RelativeLayout
+                        android:id="@+id/add_poi"
+                        android:layout_width="@dimen/dime_64dp"
+                        android:layout_height="@dimen/dime_64dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/dime_8dp"
+                        android:background="@drawable/setting_shape">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@mipmap/icon_add4" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
 
         </LinearLayout>

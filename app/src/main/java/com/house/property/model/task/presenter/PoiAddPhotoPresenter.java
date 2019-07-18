@@ -1,0 +1,59 @@
+package com.house.property.model.task.presenter;
+
+import com.house.property.base.BasePresenter;
+import com.house.property.http.observer.HttpRxCallback;
+import com.house.property.model.task.biz.PoiAddBiz;
+import com.house.property.model.task.biz.PoiAddPhotoBiz;
+import com.house.property.model.task.entity.DimFileinfoVO;
+import com.house.property.model.task.entity.DimPOIVO;
+import com.house.property.model.task.entity.MessageEventVO;
+import com.house.property.model.task.iface.IPoiAddPhotoView;
+import com.house.property.model.task.iface.IPoiAddView;
+import com.trello.rxlifecycle2.LifecycleProvider;
+
+import java.util.List;
+
+public class PoiAddPhotoPresenter extends BasePresenter<IPoiAddPhotoView, LifecycleProvider> {
+    private final String TAG = PoiAddPhotoPresenter.class.getSimpleName();
+
+    public PoiAddPhotoPresenter(IPoiAddPhotoView view, LifecycleProvider activity) {
+        super(view, activity);
+    }
+
+    /**
+     * 获取任务列表
+     */
+    public void addNewPoiPhoto(List<DimFileinfoVO> bean) {
+
+        if (getView() != null)
+            getView().showLoading();
+
+
+        HttpRxCallback httpRxCallback = new HttpRxCallback() {
+            @Override
+            public void onSuccess(Object... object) {
+                if (getView() != null) {
+                    getView().closeLoading();
+                    getView().showResult((MessageEventVO) object[0]);
+                }
+            }
+
+            @Override
+            public void onError(int code, String desc) {
+                if (getView() != null) {
+                    getView().closeLoading();
+                    getView().showToast(desc);
+                }
+            }
+
+            @Override
+            public void onCancel() {
+                if (getView() != null) {
+                    getView().closeLoading();
+                }
+            }
+        };
+
+        new PoiAddPhotoBiz().addNewPoiPhoto(bean, getActivity(), httpRxCallback);
+    }
+}

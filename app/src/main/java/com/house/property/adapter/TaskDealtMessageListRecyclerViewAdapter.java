@@ -79,6 +79,9 @@ public class TaskDealtMessageListRecyclerViewAdapter extends RecyclerView.Adapte
                 address = map.getCommunity().getCommAddress();
             }
         }else{
+            if(null == map.getGisObj()){
+                return;
+            }
             address = map.getGisObj().getName();
         }
         holder.message.setText(address);

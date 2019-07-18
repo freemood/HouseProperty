@@ -56,6 +56,7 @@ import com.house.property.model.task.presenter.CommDetailsUpdatePresenter;
 import com.house.property.model.task.upload.ApiUtil;
 import com.house.property.utils.CornerTransform;
 import com.house.property.utils.PhotoUtils;
+import com.house.property.utils.SharedPreferencesUtil;
 import com.house.property.utils.ToastUtils;
 import com.house.property.utils.Utils;
 import com.house.property.widget.RLoadingDialog;
@@ -964,6 +965,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
                         fileCoordinateInfo.setGaodeLongitude(gaoDeLongitude);
                         fileCoordinateInfo.setWgs84Latitude(wgs84Latitude);
                         fileCoordinateInfo.setWgs84Longitude(wgs84Longitude);
+                        String name = (String) SharedPreferencesUtil.getData("name", "");
+                        fileCoordinateInfo.setUserName(name);
                         dimFileinfoVO.setFileCoordinateInfo(fileCoordinateInfo);
                         upDimFileinfoVOList.add(dimFileinfoVO);
                         showGildPhoto(type, file.getPath());
@@ -1037,9 +1040,12 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         appearanceDishangtcwShoufeiEt.setText(reTextNull(bean.getLandParkingCarsCharge()));
         appearanceDixiatcwEt.setText(reTextNull(bean.getUndergroundCarsTotal()));
         appearanceDixiatcwShoufeiEt.setText(reTextNull(bean.getUndergroundCarsCharge()));
-
+        appearanceYoueryuanEt.setText(reTextNull(bean.getCommercialNurserySchool()));
         if (!TextUtils.isEmpty(bean.getJianzhuniandai())) {
             appearanceHouseTimeTv.setText(bean.getJianzhuniandai());
+        }
+        if (!TextUtils.isEmpty(bean.getNewDistrict())) {
+            appearanceChuxinTimeTv.setText(bean.getNewDistrict());
         }
         yseOrnoList = getTypeList(PDSVO_LIST, PDS_TYPE_YN);
 //        initSpinner(bolckResidentialWaterSpinner, yseOrnoList, commBean.getWaterSupp());
@@ -1110,6 +1116,7 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
             getAttributeTypeList(allAttributeList, PDS_TYPE_MANAGEMENT, appearanceGuanlizidonghuaTv);
             getAttributeTypeList(allAttributeList, PDS_TYPE_SANITARY, appearanceWeishenghuanjingTv);
 
+            getAttributeTypeList(allAttributeList, PDS_TYPE_SAFETY_SYSTEM, appearanceAnquanzidonghuaTv);
 
         }
 

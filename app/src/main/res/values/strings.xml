@@ -113,6 +113,9 @@
     <string name="house_details_appearance_other_facilities_photos">公共设施照片</string>
     <string name="house_details_appearance_other_negative_photos">负面照片</string>
 
+
+    <string name="house_poi_sheshi_photos">POI设施照片</string>
+
     <string name="house_task_bolck_details">小区幢楼详情信息</string>
     <string name="house_task_details_bolck_base">经纬度</string>
     <string name="house_task_details_bolck_qu">小区</string>

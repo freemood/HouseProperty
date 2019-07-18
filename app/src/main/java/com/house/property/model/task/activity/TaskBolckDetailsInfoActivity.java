@@ -57,6 +57,7 @@ import com.house.property.model.task.presenter.CommBuildDetailsListPresenter;
 import com.house.property.model.task.upload.ApiUtil;
 import com.house.property.utils.CornerTransform;
 import com.house.property.utils.PhotoUtils;
+import com.house.property.utils.SharedPreferencesUtil;
 import com.house.property.utils.ToastUtils;
 import com.house.property.utils.Utils;
 import com.house.property.widget.RLoadingDialog;
@@ -772,6 +773,8 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
                         fileCoordinateInfo.setGaodeLongitude(gaoDeLongitude);
                         fileCoordinateInfo.setWgs84Latitude(wgs84Latitude);
                         fileCoordinateInfo.setWgs84Longitude(wgs84Longitude);
+                        String name = (String) SharedPreferencesUtil.getData("name", "");
+                        fileCoordinateInfo.setUserName(name);
                         dimFileinfoVO.setFileCoordinateInfo(fileCoordinateInfo);
                         upDimFileinfoVOList.add(dimFileinfoVO);
                         showGildPhoto(type, file.getPath());

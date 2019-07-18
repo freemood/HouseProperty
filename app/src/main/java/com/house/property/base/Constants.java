@@ -84,6 +84,9 @@ public class Constants {
     //整栋楼照片
     public static final String COMM_ENTIRE_PHOTO = "ENTIRE_PHOTO";
 
+    //poi照片
+    public static final String COMM_POI_PHOTO = "POI_PHOTO";
+
 
     //绿色建筑星级
     public static final String PDS_TYPE_GREEN_BUILDING_STAR = "GREEN_BUILDING_STAR";
