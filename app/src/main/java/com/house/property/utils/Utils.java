@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -186,19 +188,94 @@ public class Utils {
     public static void showDatePickerDialog(Activity activity, final TextView tv) {
         Calendar calendar = Calendar.getInstance();
         // 直接创建一个DatePickerDialog对话框实例，并将它显示出来
-        new DatePickerDialog(activity, AlertDialog.THEME_HOLO_LIGHT, new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(activity, AlertDialog.THEME_HOLO_LIGHT, new DatePickerDialog.OnDateSetListener() {
             // 绑定监听器(How the parent is notified that the date is set.)
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 // 此处得到选择的时间，可以进行你想要的操作
                 tv.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
-
+               tv.setText(String.valueOf(year));
             }
         }
                 // 设置初始日期
                 , calendar.get(Calendar.YEAR)
                 , calendar.get(Calendar.MONTH)
-                , calendar.get(Calendar.DAY_OF_MONTH)).show();
+                , calendar.get(Calendar.DAY_OF_MONTH));
+      //  showYear(activity, datePickerDialog);
+        datePickerDialog.show();
+
+        //只显示年月，隐藏掉日
+        DatePicker dp = findDatePicker((ViewGroup) datePickerDialog.getWindow().getDecorView());
+        if (dp != null) {
+            ((ViewGroup)((ViewGroup)dp.getChildAt(0)).getChildAt(0))
+                    .getChildAt(2).setVisibility(View.GONE);
+            //如果想隐藏掉年，将getChildAt(2)改为getChildAt(0)
+            ((ViewGroup)((ViewGroup)dp.getChildAt(0)).getChildAt(0))
+                    .getChildAt(1).setVisibility(View.GONE);
+        }
+    }
+
+    private static void showYear(Activity activity, DatePickerDialog datePickerDialog) {
+        int SDKVersion = getSDKVersionNumber();// 获取系统版本
+        System.out.println("SDKVersion = " + SDKVersion);
+        DatePicker dp = findDatePicker((ViewGroup) datePickerDialog.getWindow()
+                .getDecorView());// 设置弹出年月日
+        if (dp != null) {
+            if (SDKVersion < 11) {
+                ((ViewGroup) dp.getChildAt(0)).getChildAt(1).setVisibility(
+                        View.GONE);
+            } else if (SDKVersion > 14) {
+                //只显示年月
+                ((ViewGroup) ((ViewGroup) dp.getChildAt(0)).getChildAt(0))
+                        .getChildAt(1).setVisibility(View.GONE);//.getChildAt(0)
+//                //只显示年日
+//                ((ViewGroup) ((ViewGroup) dp.getChildAt(0)).getChildAt(0))
+//                        .getChildAt(2).setVisibility(View.GONE);
+//                //只显示年月
+//                ((ViewGroup) ((ViewGroup) dp.getChildAt(0)).getChildAt(0))
+//                        .getChildAt(1).setVisibility(View.GONE);
+//                //显示月日
+//                ((ViewGroup) ((ViewGroup) dp.getChildAt(0)).getChildAt(0))
+//                        .getChildAt(0).setVisibility(View.GONE);
+            }
+        }
+    }
+
+    /**
+     * 从当前Dialog中查找DatePicker子控件
+     *
+     * @param group
+     * @return
+     */
+    private static DatePicker findDatePicker(ViewGroup group) {
+        if (group != null) {
+            for (int i = 0, j = group.getChildCount(); i < j; i++) {
+                View child = group.getChildAt(i);
+                if (child instanceof DatePicker) {
+                    return (DatePicker) child;
+                } else if (child instanceof ViewGroup) {
+                    DatePicker result = findDatePicker((ViewGroup) child);
+                    if (result != null)
+                        return result;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 获取系统SDK版本
+     *
+     * @return
+     */
+    public static int getSDKVersionNumber() {
+        int sdkVersion;
+        try {
+            sdkVersion = Integer.valueOf(android.os.Build.VERSION.SDK);
+        } catch (NumberFormatException e) {
+            sdkVersion = 0;
+        }
+        return sdkVersion;
     }
 
     /**
@@ -225,44 +302,35 @@ public class Utils {
     }
 
     /**
-
-     *   将json 数组转换为Map 对象
-
+     * 将json 数组转换为Map 对象
+     *
      * @param jsonString
-
      * @return
-
      */
 
-    public static TreeMap<String, Object> getMap(String jsonString)
-
-    {
+    public static TreeMap<String, Object> getMap(String jsonString) {
         JSONObject jsonObject;
-        try
-        {
+        try {
             jsonObject = new JSONObject(jsonString);
-        Iterator<String> keyIter = jsonObject.keys();
+            Iterator<String> keyIter = jsonObject.keys();
             String key;
             Object value;
             TreeMap<String, Object> valueMap = new TreeMap<String, Object>();
-            while (keyIter.hasNext())
-            {
+            while (keyIter.hasNext()) {
                 key = (String) keyIter.next();
                 value = jsonObject.get(key);
                 valueMap.put(key, value);
             }
             return valueMap;
-        }
-        catch (JSONException e)
-        {
+        } catch (JSONException e) {
             e.printStackTrace();
         }
 
         return null;
 
     }
-    public static List<String> removeDuplicate(List<String> list)
-    {
+
+    public static List<String> removeDuplicate(List<String> list) {
         Set set = new LinkedHashSet<String>();
         set.addAll(list);
         list.clear();
