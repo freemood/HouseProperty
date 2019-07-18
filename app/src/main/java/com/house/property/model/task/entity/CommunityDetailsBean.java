@@ -76,13 +76,50 @@ public class CommunityDetailsBean implements Serializable {
     private String pics;
     private String gisId;
     private String managementId;
+    //@ApiModelProperty("绿色建筑星级")
+    private String greenBuildingStar;
 
+    //@ApiModelProperty("绿色科技住宅")
+    private String greenBuildingKeji;
+
+    //@ApiModelProperty("小区配建商业设施形式")
+    private String commercialFacilities;
+
+    //@ApiModelProperty("小区消防设施")
+    private String fireFightingFacilities;
+
+    //@ApiModelProperty("小区出新")
+    private String newDistrict;
+
+    //@ApiModelProperty("人防停车位数量")
+    private String defenseCarsTotal;
+
+    //@ApiModelProperty("产权停车位数量")
+    private String propertyCarsTotal;
+
+    //@ApiModelProperty("地上停车位数量")
+    private String landParkingCarsTotal;
+
+    //@ApiModelProperty("地上停车收费")
+    private String landParkingCarsCharge;
+
+    //@ApiModelProperty("地下停车位数量")
+    private String undergroundCarsTotal;
+
+    //@ApiModelProperty("地下停车收费")
+    private String undergroundCarsCharge;
+
+    //@ApiModelProperty("小区内道路状况")
+    private String roadComditionSituation;
+
+    //@ApiModelProperty("小区幼儿园名称")
+    private String commercialNurserySchool;
     private CommunityManagementBean managementObj;
 
     private List<PdSVO> pdSList;
 
     private List<AttributeVO> attributeLits;
-    //@ApiModelProperty("照片")
+    ////@ApiModelProperty("照片")
     private List<DimFileinfoVO> commPhotos;
     public String getId() {
         return id;
@@ -426,5 +463,109 @@ public class CommunityDetailsBean implements Serializable {
 
     public void setCommPhotos(List<DimFileinfoVO> commPhotos) {
         this.commPhotos = commPhotos;
+    }
+
+    public String getGreenBuildingStar() {
+        return greenBuildingStar;
+    }
+
+    public void setGreenBuildingStar(String greenBuildingStar) {
+        this.greenBuildingStar = greenBuildingStar;
+    }
+
+    public String getGreenBuildingKeji() {
+        return greenBuildingKeji;
+    }
+
+    public void setGreenBuildingKeji(String greenBuildingKeji) {
+        this.greenBuildingKeji = greenBuildingKeji;
+    }
+
+    public String getCommercialFacilities() {
+        return commercialFacilities;
+    }
+
+    public void setCommercialFacilities(String commercialFacilities) {
+        this.commercialFacilities = commercialFacilities;
+    }
+
+    public String getFireFightingFacilities() {
+        return fireFightingFacilities;
+    }
+
+    public void setFireFightingFacilities(String fireFightingFacilities) {
+        this.fireFightingFacilities = fireFightingFacilities;
+    }
+
+    public String getNewDistrict() {
+        return newDistrict;
+    }
+
+    public void setNewDistrict(String newDistrict) {
+        this.newDistrict = newDistrict;
+    }
+
+    public String getDefenseCarsTotal() {
+        return defenseCarsTotal;
+    }
+
+    public void setDefenseCarsTotal(String defenseCarsTotal) {
+        this.defenseCarsTotal = defenseCarsTotal;
+    }
+
+    public String getPropertyCarsTotal() {
+        return propertyCarsTotal;
+    }
+
+    public void setPropertyCarsTotal(String propertyCarsTotal) {
+        this.propertyCarsTotal = propertyCarsTotal;
+    }
+
+    public String getLandParkingCarsTotal() {
+        return landParkingCarsTotal;
+    }
+
+    public void setLandParkingCarsTotal(String landParkingCarsTotal) {
+        this.landParkingCarsTotal = landParkingCarsTotal;
+    }
+
+    public String getLandParkingCarsCharge() {
+        return landParkingCarsCharge;
+    }
+
+    public void setLandParkingCarsCharge(String landParkingCarsCharge) {
+        this.landParkingCarsCharge = landParkingCarsCharge;
+    }
+
+    public String getUndergroundCarsTotal() {
+        return undergroundCarsTotal;
+    }
+
+    public void setUndergroundCarsTotal(String undergroundCarsTotal) {
+        this.undergroundCarsTotal = undergroundCarsTotal;
+    }
+
+    public String getUndergroundCarsCharge() {
+        return undergroundCarsCharge;
+    }
+
+    public void setUndergroundCarsCharge(String undergroundCarsCharge) {
+        this.undergroundCarsCharge = undergroundCarsCharge;
+    }
+
+    public String getRoadComditionSituation() {
+        return roadComditionSituation;
+    }
+
+    public void setRoadComditionSituation(String roadComditionSituation) {
+        this.roadComditionSituation = roadComditionSituation;
+    }
+
+    public String getCommercialNurserySchool() {
+        return commercialNurserySchool;
+    }
+
+    public void setCommercialNurserySchool(String commercialNurserySchool) {
+        this.commercialNurserySchool = commercialNurserySchool;
     }
 }

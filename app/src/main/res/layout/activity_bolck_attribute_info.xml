@@ -362,4 +362,70 @@
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/attribute_shuifei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_shuifei"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/attribute_shuifei_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/house_array"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/attribute_dianfei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_details_dianfei"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/attribute_dianfei_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/house_array"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
 </LinearLayout>

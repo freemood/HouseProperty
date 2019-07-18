@@ -14,7 +14,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -88,14 +87,22 @@ import static com.house.property.base.Constants.PDSVO_LIST;
 import static com.house.property.base.Constants.PDS_TYPE_BUILD_STRUCTURE;
 import static com.house.property.base.Constants.PDS_TYPE_BUILD_TYPE;
 import static com.house.property.base.Constants.PDS_TYPE_CHANQQUANNIANXIAN;
+import static com.house.property.base.Constants.PDS_TYPE_COMMERCIAL_FACILITIE;
 import static com.house.property.base.Constants.PDS_TYPE_EPOWER_SUPP;
 import static com.house.property.base.Constants.PDS_TYPE_EVN_LEVEL;
+import static com.house.property.base.Constants.PDS_TYPE_FIRE_FIGHTING;
+import static com.house.property.base.Constants.PDS_TYPE_GREEN_BUILDING_KEJI;
+import static com.house.property.base.Constants.PDS_TYPE_GREEN_BUILDING_STAR;
 import static com.house.property.base.Constants.PDS_TYPE_HOUSE_ATTRIBUTE;
 import static com.house.property.base.Constants.PDS_TYPE_INNER_EDU;
 import static com.house.property.base.Constants.PDS_TYPE_INNER_PEITAOMIAOSHU;
 import static com.house.property.base.Constants.PDS_TYPE_JINGGUAN;
+import static com.house.property.base.Constants.PDS_TYPE_MANAGEMENT;
 import static com.house.property.base.Constants.PDS_TYPE_ONE_TO_SERVEN;
 import static com.house.property.base.Constants.PDS_TYPE_ROAD;
+import static com.house.property.base.Constants.PDS_TYPE_ROAD_COMDITION;
+import static com.house.property.base.Constants.PDS_TYPE_SAFETY_SYSTEM;
+import static com.house.property.base.Constants.PDS_TYPE_SANITARY;
 import static com.house.property.base.Constants.PDS_TYPE_TUDIXINGZHI;
 import static com.house.property.base.Constants.PDS_TYPE_WATER_SUPP;
 import static com.house.property.base.Constants.PDS_TYPE_WEIQIANG_FANGHU;
@@ -156,8 +163,10 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     Spinner propertySanitationSpinner;
     @BindView(R.id.bolck_residential_road_spinner)
     Spinner propertyRoadSpinner;
-//    @BindView(R.id.bolck_residential_xiaoshou_spinner)
+    //    @BindView(R.id.bolck_residential_xiaoshou_spinner)
 //    Spinner xiaoshouStateSpinner;
+    @BindView(R.id.bolck_residential_lvsejianzxingji_spinner)
+    Spinner bolckResidentialLvsejianzxingjiSpinner;
 
 
     @BindView(R.id.house_task_name)
@@ -178,6 +187,23 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     TextView attributeApartmentEt;
     @BindView(R.id.property_adress_et)
     TextView propertyAdressEt;
+    @BindView(R.id.appearance_renfangtcw_et)
+    TextView appearanceRenfangtcwEt;
+    @BindView(R.id.appearance_chanquantcw_et)
+    TextView appearanceChanquantcwEt;
+    @BindView(R.id.appearance_dishangtcw_et)
+    TextView appearanceDishangtcwEt;
+    @BindView(R.id.appearance_dishangtcw_shoufei_et)
+    TextView appearanceDishangtcwShoufeiEt;
+    @BindView(R.id.appearance_dixiatcw_et)
+    TextView appearanceDixiatcwEt;
+    @BindView(R.id.appearance_dixiatcw_shoufei_et)
+    TextView appearanceDixiatcwShoufeiEt;
+    @BindView(R.id.appearance_dixiatcw_youeryuan_et)
+    TextView appearanceYoueryuanEt;
+    @BindView(R.id.appearance_chuxin_time_tv)
+    TextView appearanceChuxinTimeTv;
+
 
     @BindView(R.id.house_attribute_volume_tv)
     TextView attributeVolumeTv;
@@ -219,7 +245,24 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     TextView propertyBrandEt;
     @BindView(R.id.property_charging_et)
     TextView propertyChargingEt;
-
+    @BindView(R.id.appearance_kejizhuzhai_type_tv)
+    TextView appearanceKejizhuzhaiTv;
+    @BindView(R.id.appearance_peijiansheshi_type_tv)
+    TextView appearancePeijiansheshiTv;
+    @BindView(R.id.appearance_xiaofangsheshi_type_tv)
+    TextView appearanceXiaofangsheshiTv;
+    @BindView(R.id.appearance_daoluzhuangkuang_type_tv)
+    TextView appearanceDaoluzhuangkuangTv;
+    @BindView(R.id.property_guanliyongfang_et)
+    TextView propertyGuanliyongfangEt;
+    @BindView(R.id.property_wuyeshoufei_et)
+    TextView propertyWuyeshoufeiEt;
+    @BindView(R.id.appearance_anquanzidonghua_tv)
+    TextView appearanceAnquanzidonghuaTv;
+    @BindView(R.id.appearance_guanli_tv)
+    TextView appearanceGuanlizidonghuaTv;
+    @BindView(R.id.appearance_weishenghuanjing_tv)
+    TextView appearanceWeishenghuanjingTv;
 
     private CommDetailsPresenter commDetailsPresenter = new CommDetailsPresenter(this, this);
     private CommDetailsUpdatePresenter commDetailsUpdatePresenter = new CommDetailsUpdatePresenter(this, this);
@@ -242,6 +285,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     private List<PdSVO> envLevelList = new ArrayList<>();
     private List<PdSVO> roadList = new ArrayList<>();
     private List<PdSVO> xiaoshouStateList = new ArrayList<>();
+    private List<PdSVO> jianZhiXingJiList = new ArrayList<>();
+    private List<PdSVO> sd = new ArrayList<>();
 
     private List<AttributeVO> allAttributeList = new ArrayList<>();
     private List<PdSVO> equipmentTypeList = new ArrayList<>();
@@ -256,6 +301,13 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     private List<PdSVO> electricList = new ArrayList<>();
     private List<PdSVO> securityList = new ArrayList<>();
     private List<PdSVO> chanquanList = new ArrayList<>();
+    private List<PdSVO> kejiZhuzhaiList = new ArrayList<>();
+    private List<PdSVO> peijianShangyeList = new ArrayList<>();
+    private List<PdSVO> xiaofangSheshiList = new ArrayList<>();
+    private List<PdSVO> daoluZhuangkuangList = new ArrayList<>();
+    private List<PdSVO> anquanZidonghuaList = new ArrayList<>();
+    private List<PdSVO> guanliZidonghuaList = new ArrayList<>();
+    private List<PdSVO> weishengHuanjingList = new ArrayList<>();
 
     private List<AttributeVO> allUpdateAttributeList = new ArrayList<>();
     private CommunityDetailsBean commBean;
@@ -452,7 +504,11 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
             R.id.add_saomiao_facilities, R.id.add_saomiao_places, R.id.appearance_attribute_buile_type_tv,
             R.id.add_saomiao_gatehouse, R.id.page_back, R.id.bolck_residential_water_tv, R.id.appearance_house_chanquannianxian_tv,
             R.id.page_right_rl, R.id.appearance_education_tv, R.id.bolck_residential_electric_tv,
-            R.id.appearance_house_attribute_tv, R.id.appearance_house_time_tv, R.id.appearance_security_tv})
+            R.id.appearance_house_attribute_tv, R.id.appearance_house_time_tv, R.id.appearance_security_tv,
+            R.id.appearance_chuxin_time_tv,R.id.appearance_kejizhuzhai_type_tv,R.id.appearance_peijiansheshi_type_tv,
+            R.id.appearance_xiaofangsheshi_type_tv,R.id.appearance_daoluzhuangkuang_type_tv,R.id.appearance_anquanzidonghua_tv,
+            R.id.appearance_guanli_tv,R.id.appearance_weishenghuanjing_tv
+    })
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.appearance_equipment_tv:
@@ -521,7 +577,30 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
                 PhotoUtils.takePicture(this, TAKE_PHOTO);
                 photoType = COMM_NEGATIVE_PHOTO;
                 break;
-
+            case R.id.appearance_chuxin_time_tv:
+                Utils.showDatePickerDialog(this, appearanceChuxinTimeTv);
+                break;
+            case R.id.appearance_kejizhuzhai_type_tv:
+                Utils.showMultiChoiceItems(this, kejiZhuzhaiList, appearanceKejizhuzhaiTv);
+                break;
+            case R.id.appearance_peijiansheshi_type_tv:
+                Utils.showMultiChoiceItems(this, peijianShangyeList, appearancePeijiansheshiTv);
+                break;
+            case R.id.appearance_xiaofangsheshi_type_tv:
+                Utils.showMultiChoiceItems(this, xiaofangSheshiList, appearanceXiaofangsheshiTv);
+                break;
+            case R.id.appearance_daoluzhuangkuang_type_tv:
+                Utils.showMultiChoiceItems(this, daoluZhuangkuangList, appearanceDaoluzhuangkuangTv);
+                break;
+            case R.id.appearance_anquanzidonghua_tv:
+                Utils.showMultiChoiceItems(this, anquanZidonghuaList, appearanceAnquanzidonghuaTv);
+                break;
+            case R.id.appearance_guanli_tv:
+                Utils.showMultiChoiceItems(this, guanliZidonghuaList, appearanceGuanlizidonghuaTv);
+                break;
+            case R.id.appearance_weishenghuanjing_tv:
+                Utils.showMultiChoiceItems(this, weishengHuanjingList, appearanceWeishenghuanjingTv);
+                break;
         }
     }
 
@@ -539,12 +618,14 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         String propertyTalkbacklSpinnerStr = getSpinnerKey(propertyTalkbacklSpinner.getSelectedItem().toString(), yseOrnoList);
         String propertyCloseSpinnerStr = getSpinnerKey(propertyCloseSpinner.getSelectedItem().toString(), yseOrnoList);
         String propertySanitationSpinnerStr = getSpinnerKey(propertySanitationSpinner.getSelectedItem().toString(), envLevelList);
-        //  String xiaoshouStateSpinnerStr= getSpinnerKey(xiaoshouStateSpinner.getSelectedItem().toString(), xiaoshouStateList);
+        String bolckResidentialLvsejianzxingjiStr = getSpinnerKey(bolckResidentialLvsejianzxingjiSpinner.getSelectedItem().toString(), jianZhiXingJiList);
 
+        //  String xiaoshouStateSpinnerStr= getSpinnerKey(xiaoshouStateSpinner.getSelectedItem().toString(), xiaoshouStateList);
+        // String propertyChargingStr =  getSpinnerKey(propertyChargingEt.getSelectedItem().toString(), managementLevelList);
 
         String houseTaskNameStr = houseTaskNameTv.getText().toString();
         String houseTaskAdressStr = houseTaskAdressTv.getText().toString();
-
+        String propertyChargingStr = propertyChargingEt.getText().toString();
         String appearanceLotStr = appearanceLotEt.getText().toString();
         String appearanceExitStr = appearanceExitEt.getText().toString();
         String attributeTradingStr = attributeTradingEt.getText().toString();
@@ -553,12 +634,25 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         String attributeApartmentStr = attributeApartmentEt.getText().toString();
         String attributeCommunicationStr = attributeCommunicationEt.getText().toString();
         String propertyBrandStr = propertyBrandEt.getText().toString();
-        String propertyChargingStr = propertyChargingEt.getText().toString();
-        String propertyAdressStr = propertyAdressEt.getText().toString();
+        String propertyWuyeshoufeiStr = propertyWuyeshoufeiEt.getText().toString();
 
+
+        String appearanceRenfangtcwStr = appearanceRenfangtcwEt.getText().toString();
+        String appearanceChanquantcwStr = appearanceChanquantcwEt.getText().toString();
+        String appearanceDishangtcwStr = appearanceDishangtcwEt.getText().toString();
+        String appearanceDishangtcwShoufeiStr = appearanceDishangtcwShoufeiEt.getText().toString();
+        String appearanceDixiatcwStr = appearanceDixiatcwEt.getText().toString();
+        String appearanceDixiatcwShoufeiStr = appearanceDixiatcwShoufeiEt.getText().toString();
+        String appearanceYoueryuanStr = appearanceYoueryuanEt.getText().toString();
+        String appearanceChuxinTimeStr = appearanceChuxinTimeTv.getText().toString();
+
+        String propertyAdressStr = propertyAdressEt.getText().toString();
         String appearanceHouseTimeStr = appearanceHouseTimeTv.getText().toString();
+        String propertyGuanliyongfangStr =  propertyGuanliyongfangEt.getText().toString();
 
         String appearanceEquipmenStr = appearanceEquipmenTv.getText().toString();
+
+
         addUpdateAttributeList(allUpdateAttributeList, equipmentTypeList, appearanceEquipmenStr, commBean.getId(), ATTRIBUTE_TYPE_COMMUNICATION);
         String appearanceEducationStr = appearanceEducationTv.getText().toString();
         addUpdateAttributeList(allUpdateAttributeList, educationTypeList, appearanceEducationStr, commBean.getId(), ATTRIBUTE_TYPE_COMMUNICATION);
@@ -582,6 +676,21 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         addUpdateAttributeList(allUpdateAttributeList, securityList, appearancePropertySecurityStr, commBean.getId(), ATTRIBUTE_TYPE_COMM_MANAGEMENT);
         String appearancehouseChanquannianxianTvStr = appearancehouseChanquannianxianTv.getText().toString();
         addUpdateAttributeList(allUpdateAttributeList, chanquanList, appearancehouseChanquannianxianTvStr, commBean.getId(), ATTRIBUTE_TYPE_COMMUNICATION);
+        String appearanceKejizhuzhaiTvStr = appearanceKejizhuzhaiTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, kejiZhuzhaiList, appearanceKejizhuzhaiTvStr, commBean.getId(), ATTRIBUTE_TYPE_COMMUNICATION);
+        String appearancePeijiansheshiTvStr = appearancePeijiansheshiTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, peijianShangyeList, appearancePeijiansheshiTvStr, commBean.getId(), ATTRIBUTE_TYPE_COMMUNICATION);
+        String appearanceXiaofangsheshiTvStr = appearanceXiaofangsheshiTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, xiaofangSheshiList, appearanceXiaofangsheshiTvStr, commBean.getId(), ATTRIBUTE_TYPE_COMMUNICATION);
+        String appearanceDaoluzhuangkuangTvStr = appearanceDaoluzhuangkuangTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, daoluZhuangkuangList, appearanceDaoluzhuangkuangTvStr, commBean.getId(), ATTRIBUTE_TYPE_COMMUNICATION);
+        String appearanceAnquanzidonghuaTvStr = appearanceAnquanzidonghuaTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, anquanZidonghuaList, appearanceAnquanzidonghuaTvStr, commBean.getId(), ATTRIBUTE_TYPE_COMM_MANAGEMENT);
+        String appearanceGuanlizidonghuaTvStr = appearanceGuanlizidonghuaTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, guanliZidonghuaList, appearanceGuanlizidonghuaTvStr, commBean.getId(), ATTRIBUTE_TYPE_COMM_MANAGEMENT);
+        String appearanceWeishenghuanjingTvStr = appearanceWeishenghuanjingTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, weishengHuanjingList, appearanceWeishenghuanjingTvStr, commBean.getId(), ATTRIBUTE_TYPE_COMM_MANAGEMENT);
+
 
         if (showNullToast(houseTaskNameStr, getResources().getString(R.string.house_task_area_name))) {
             return;
@@ -706,6 +815,19 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         communityDetailsBean.setLumianQingkuang(propertyRoadSpinnerStr);
         communityDetailsBean.setGasSupp(bolckResidentialGasSpinnerStr);
         communityDetailsBean.setHeatSupp(bolckResidentialHeatSpinnerStr);
+        communityDetailsBean.setDefenseCarsTotal(appearanceRenfangtcwStr);
+        communityDetailsBean.setPropertyCarsTotal(appearanceChanquantcwStr);
+        communityDetailsBean.setLandParkingCarsTotal(appearanceDishangtcwStr);
+        communityDetailsBean.setLandParkingCarsCharge(appearanceDishangtcwShoufeiStr);
+        communityDetailsBean.setUndergroundCarsTotal(appearanceDixiatcwStr);
+        communityDetailsBean.setUndergroundCarsCharge(appearanceDixiatcwShoufeiStr);
+        communityDetailsBean.setCommercialNurserySchool(appearanceYoueryuanStr);
+        communityDetailsBean.setNewDistrict(appearanceChuxinTimeStr);
+        communityDetailsBean.setGreenBuildingStar(bolckResidentialLvsejianzxingjiStr);
+        communityDetailsBean.setGreenBuildingKeji(appearanceKejizhuzhaiTvStr);
+        communityDetailsBean.setCommercialFacilities(appearancePeijiansheshiTvStr);
+        communityDetailsBean.setFireFightingFacilities(appearanceXiaofangsheshiTvStr);
+        communityDetailsBean.setRoadComditionSituation(appearanceDaoluzhuangkuangTvStr);
         communityDetailsBean.setManagementId(commBean.getManagementId());
         communityDetailsBean.setGisId(gisId);
         communityDetailsBean.setChanqquannianxian(appearancehouseChanquannianxianTvStr);
@@ -725,6 +847,11 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         managementObj.setIsFengbi(propertyCloseSpinnerStr);
         managementObj.setEnvLevel(propertySanitationSpinnerStr);
         managementObj.setId(communityDetailsBean.getManagementId());
+        managementObj.setPropertyManagementHousing(propertyGuanliyongfangStr);
+        managementObj.setPropertyCharges(propertyWuyeshoufeiStr);
+        managementObj.setSafetyAutomationSystem(appearanceAnquanzidonghuaTvStr);
+        managementObj.setManagementAutomation(appearanceGuanlizidonghuaTvStr);
+        managementObj.setSanitaryEnvironment(appearanceWeishenghuanjingTvStr);
         communityDetailsBean.setManagementObj(managementObj);
 
         if (null == commBean || TextUtils.isEmpty(commBean.getId())) {
@@ -799,8 +926,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     private void showPhoto(PhotoBean photoBean) {
         String type = photoBean.getType();
         String path = photoBean.getPath();
-        String gaoDeLatitude  = String.valueOf(photoBean.getGaoDeLatitude());
-        String gaoDeLongitude= String.valueOf(photoBean.getGaoDeLongitude());
+        String gaoDeLatitude = String.valueOf(photoBean.getGaoDeLatitude());
+        String gaoDeLongitude = String.valueOf(photoBean.getGaoDeLongitude());
         String wgs84Latitude = String.valueOf(photoBean.getWgs84Latitude());
         String wgs84Longitude = String.valueOf(photoBean.getWgs84Longitude());
         File file = new File(path);
@@ -904,7 +1031,12 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         attributeGreenTv.setText(reTextNull(bean.getLvhualv()));
         attributeDevelopersTv.setText(reTextNull(bean.getKaifashang()));
         attributeCommunicationEt.setText(reTextNull(bean.getIcdDev()));
-
+        appearanceRenfangtcwEt.setText(reTextNull(bean.getDefenseCarsTotal()));
+        appearanceChanquantcwEt.setText(reTextNull(bean.getPropertyCarsTotal()));
+        appearanceDishangtcwEt.setText(reTextNull(bean.getLandParkingCarsTotal()));
+        appearanceDishangtcwShoufeiEt.setText(reTextNull(bean.getLandParkingCarsCharge()));
+        appearanceDixiatcwEt.setText(reTextNull(bean.getUndergroundCarsTotal()));
+        appearanceDixiatcwShoufeiEt.setText(reTextNull(bean.getUndergroundCarsCharge()));
 
         if (!TextUtils.isEmpty(bean.getJianzhuniandai())) {
             appearanceHouseTimeTv.setText(bean.getJianzhuniandai());
@@ -916,7 +1048,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         initSpinner(this, bolckResidentialHeatSpinner, yseOrnoList, bean.getHeatSupp());
         roadList = getTypeList(PDSVO_LIST, PDS_TYPE_ROAD);
         initSpinner(this, propertyRoadSpinner, roadList, bean.getLumianQingkuang());
-
+        jianZhiXingJiList = getTypeList(PDSVO_LIST, PDS_TYPE_GREEN_BUILDING_STAR);
+        initSpinner(this, bolckResidentialLvsejianzxingjiSpinner, jianZhiXingJiList, bean.getGreenBuildingStar());
 
         equipmentTypeList = getTypeList(PDSVO_LIST, PDS_TYPE_INNER_PEITAOMIAOSHU);
         educationTypeList = getTypeList(PDSVO_LIST, PDS_TYPE_INNER_EDU);
@@ -929,11 +1062,20 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         waterList = getTypeList(PDSVO_LIST, PDS_TYPE_WATER_SUPP);
         electricList = getTypeList(PDSVO_LIST, PDS_TYPE_EPOWER_SUPP);
         chanquanList = getTypeList(PDSVO_LIST, PDS_TYPE_CHANQQUANNIANXIAN);
+        kejiZhuzhaiList = getTypeList(PDSVO_LIST, PDS_TYPE_GREEN_BUILDING_KEJI);
+        peijianShangyeList= getTypeList(PDSVO_LIST, PDS_TYPE_COMMERCIAL_FACILITIE);
+        xiaofangSheshiList= getTypeList(PDSVO_LIST, PDS_TYPE_FIRE_FIGHTING);
+        daoluZhuangkuangList= getTypeList(PDSVO_LIST, PDS_TYPE_ROAD_COMDITION);
+        anquanZidonghuaList= getTypeList(PDSVO_LIST, PDS_TYPE_SAFETY_SYSTEM);
+        guanliZidonghuaList= getTypeList(PDSVO_LIST, PDS_TYPE_MANAGEMENT);
+        weishengHuanjingList= getTypeList(PDSVO_LIST, PDS_TYPE_SANITARY);
         CommunityManagementBean communityManagementBean = bean.getManagementObj();
         if (null != communityManagementBean) {
             propertyBrandEt.setText(reTextNull(communityManagementBean.getManagementName()));
             propertyChargingEt.setText(reTextNull(communityManagementBean.getFeeStd()));
             propertyAdressEt.setText(reTextNull(communityManagementBean.getManagementAddr()));
+            propertyGuanliyongfangEt.setText(reTextNull(communityManagementBean.getPropertyManagementHousing()));
+            propertyWuyeshoufeiEt.setText(reTextNull(communityManagementBean.getPropertyCharges()));
         }
         managementLevelList = getTypeList(PDSVO_LIST, PDS_TYPE_ONE_TO_SERVEN);
         envLevelList = getTypeList(PDSVO_LIST, PDS_TYPE_EVN_LEVEL);
@@ -945,7 +1087,7 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         initSpinner(this, propertyTalkbacklSpinner, yseOrnoList, communityManagementBean == null ? "" : communityManagementBean.getIsVisitorInterview());
         initSpinner(this, propertyCloseSpinner, yseOrnoList, communityManagementBean == null ? "" : communityManagementBean.getIsFengbi());
         initSpinner(this, propertySanitationSpinner, envLevelList, communityManagementBean == null ? "" : communityManagementBean.getEnvLevel());
-
+        //   initSpinner(this, propertyChargingEt, managementLevelList, communityManagementBean == null ? "" : communityManagementBean.getFeeStd());
 
         allAttributeList = bean.getAttributeLits();
         if (null != allAttributeList && 0 != allAttributeList.size()) {
@@ -961,6 +1103,14 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
             getAttributeTypeList(allAttributeList, PDS_TYPE_EPOWER_SUPP, bolckResidentialElectricTv);
             getAttributeTypeList(allAttributeList, PDS_TYPE_WG_SECURITY, appearancePropertySecurityTv);
             getAttributeTypeList(allAttributeList, PDS_TYPE_CHANQQUANNIANXIAN, appearancehouseChanquannianxianTv);
+            getAttributeTypeList(allAttributeList, PDS_TYPE_GREEN_BUILDING_KEJI, appearanceKejizhuzhaiTv);
+            getAttributeTypeList(allAttributeList, PDS_TYPE_COMMERCIAL_FACILITIE, appearancePeijiansheshiTv);
+            getAttributeTypeList(allAttributeList, PDS_TYPE_FIRE_FIGHTING, appearanceXiaofangsheshiTv);
+            getAttributeTypeList(allAttributeList, PDS_TYPE_ROAD_COMDITION, appearanceDaoluzhuangkuangTv);
+            getAttributeTypeList(allAttributeList, PDS_TYPE_MANAGEMENT, appearanceGuanlizidonghuaTv);
+            getAttributeTypeList(allAttributeList, PDS_TYPE_SANITARY, appearanceWeishenghuanjingTv);
+
+
         }
 
         List<DimFileinfoVO> commPhotos = bean.getCommPhotos();

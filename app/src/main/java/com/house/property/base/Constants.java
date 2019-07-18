@@ -83,4 +83,25 @@ public class Constants {
     public static final String COMM_GATE_PHOTO = "GATE_PHOTO";
     //整栋楼照片
     public static final String COMM_ENTIRE_PHOTO = "ENTIRE_PHOTO";
+
+
+    //绿色建筑星级
+    public static final String PDS_TYPE_GREEN_BUILDING_STAR = "GREEN_BUILDING_STAR";
+
+    //绿色科技住宅
+    public static final String PDS_TYPE_GREEN_BUILDING_KEJI = "GREEN_BUILDING_KEJI";
+    //小区配建商业设施形式
+    public static final String PDS_TYPE_COMMERCIAL_FACILITIE = "COMMERCIAL_FACILITIE";
+    //小区消防设施
+    public static final String PDS_TYPE_FIRE_FIGHTING = "FIRE_FIGHTING";
+    //小区内道路状况
+    public static final String PDS_TYPE_ROAD_COMDITION = "ROAD_COMDITION";
+    //安全自动化系统
+    public static final String PDS_TYPE_SAFETY_SYSTEM = "SAFETY_SYSTEM";
+    //管理自动化
+    public static final String PDS_TYPE_MANAGEMENT = "MANAGEMENT";
+    //卫生环境
+    public static final String PDS_TYPE_SANITARY = "SANITARY";
+    //楼栋保养（内外墙）
+    public static final String PDS_TYPE_BUILD_MAINTENANCE = "BUILD_MAINTENANCE";
 }

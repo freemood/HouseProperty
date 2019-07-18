@@ -101,6 +101,11 @@
     <string name="house_details_appearance_property_security">安防</string>
     <string name="house_details_appearance_property_close">封闭</string>
     <string name="house_details_appearance_property_charging">收费标准</string>
+    <string name="house_details_appearance_property_guanliyongfang">物业管理用房</string>
+    <string name="house_details_appearance_property_wuyeshoufei">物业收费</string>
+    <string name="house_details_appearance_property_anquanzidonghua">安全自动化系统</string>
+    <string name="house_details_appearance_property_guanli">管理自动化</string>
+    <string name="house_details_appearance_property_weishenghuanjing">卫生环境</string>
 
     <string name="house_details_appearance_other">其它</string>
     <string name="house_details_appearance_other_gatehouse_photos">门楼照片</string>
@@ -125,6 +130,12 @@
     <string name="house_task_details_wall">外墙</string>
     <string name="house_task_details_top">顶层情况</string>
     <string name="house_task_details_scenery">景观</string>
+    <string name="house_task_details_teshu_no">特殊层号</string>
+    <string name="house_task_details_teshuhu">特殊户</string>
+    <string name="house_task_details_jiaofuzhuangxiu">交付装修</string>
+    <string name="house_task_details_loudongbaoyang">楼栋保养</string>
+    <string name="house_task_details_shuifei">水费类型</string>
+    <string name="house_task_details_dianfei">电费类型</string>
 
     <string name="house_task_bolck_house_attribute">住房属性</string>
     <string name="house_task_bolck_dong_attribute">销售许可证</string>

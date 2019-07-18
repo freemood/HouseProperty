@@ -23,6 +23,17 @@ public class CommunityManagementBean implements Serializable {
 
     private String envLevel;
 
+    //@ApiModelProperty("物业管理用房")
+    private String propertyManagementHousing;
+    //@ApiModelProperty("物业收费")
+    private String propertyCharges;
+    //@ApiModelProperty("安全自动化系统")
+    private String safetyAutomationSystem;
+    //@ApiModelProperty("管理自动化")
+    private String managementAutomation;
+    //@ApiModelProperty("卫生环境")
+    private String sanitaryEnvironment;
+
     public String getId() {
         return id;
     }
@@ -109,5 +120,45 @@ public class CommunityManagementBean implements Serializable {
 
     public void setEnvLevel(String envLevel) {
         this.envLevel = envLevel;
+    }
+
+    public String getPropertyManagementHousing() {
+        return propertyManagementHousing;
+    }
+
+    public void setPropertyManagementHousing(String propertyManagementHousing) {
+        this.propertyManagementHousing = propertyManagementHousing;
+    }
+
+    public String getPropertyCharges() {
+        return propertyCharges;
+    }
+
+    public void setPropertyCharges(String propertyCharges) {
+        this.propertyCharges = propertyCharges;
+    }
+
+    public String getSafetyAutomationSystem() {
+        return safetyAutomationSystem;
+    }
+
+    public void setSafetyAutomationSystem(String safetyAutomationSystem) {
+        this.safetyAutomationSystem = safetyAutomationSystem;
+    }
+
+    public String getManagementAutomation() {
+        return managementAutomation;
+    }
+
+    public void setManagementAutomation(String managementAutomation) {
+        this.managementAutomation = managementAutomation;
+    }
+
+    public String getSanitaryEnvironment() {
+        return sanitaryEnvironment;
+    }
+
+    public void setSanitaryEnvironment(String sanitaryEnvironment) {
+        this.sanitaryEnvironment = sanitaryEnvironment;
     }
 }

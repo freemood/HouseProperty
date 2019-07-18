@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_marginStart="@dimen/dime_16dp"
-android:layout_marginTop="@dimen/dime_16dp"
-android:layout_marginEnd="@dimen/dime_16dp"
-android:background="@drawable/shape_home_sence"
-android:orientation="vertical">
-
-<TextView
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/dime_16dp"
-    android:layout_marginTop="@dimen/dime_8dp"
-    android:text="@string/house_details_appearance_property"
-    android:textColor="@color/black"
-    android:textSize="@dimen/dime_16sp" />
+    android:layout_marginTop="@dimen/dime_16dp"
+    android:layout_marginEnd="@dimen/dime_16dp"
+    android:background="@drawable/shape_home_sence"
+    android:orientation="vertical">
 
-<View
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dime_1dp"
-    android:layout_marginTop="@dimen/dime_8dp"
-    android:background="@color/home_sence_3" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_16dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:text="@string/house_details_appearance_property"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dime_16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dime_1dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:background="@color/home_sence_3" />
 
 
     <RelativeLayout
@@ -54,8 +53,8 @@ android:orientation="vertical">
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dime_16dp"
             android:layout_marginEnd="@dimen/dime_8dp"
-            
-            
+
+
             android:background="@drawable/shape_dialog_secen"
             android:padding="@dimen/dime_8dp"
             android:singleLine="true"
@@ -94,8 +93,82 @@ android:orientation="vertical">
             android:layout_marginEnd="@dimen/dime_8dp"
             android:background="@drawable/shape_dialog_secen"
             android:padding="@dimen/dime_8dp"
-            
-            
+
+
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_property_guanliyongfang"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/property_guanliyongfang_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/dime_8dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_property_wuyeshoufei"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <EditText
+            android:id="@+id/property_wuyeshoufei_et"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_16dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/shape_dialog_secen"
+            android:inputType="number"
+            android:padding="@dimen/dime_8dp"
             android:singleLine="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
@@ -131,44 +204,13 @@ android:orientation="vertical">
             android:layout_marginStart="@dimen/dime_16dp"
             android:layout_marginEnd="@dimen/dime_8dp"
             android:background="@drawable/shape_dialog_secen"
+            android:inputType="number"
             android:padding="@dimen/dime_8dp"
-            
-            
             android:singleLine="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
     </RelativeLayout>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/dime_8dp"
-    android:layout_marginTop="@dimen/dime_8dp"
-    android:layout_marginEnd="@dimen/dime_8dp"
-    android:background="@drawable/shape_dialog_secen"
-    android:paddingTop="@dimen/dime_8dp"
-    android:paddingBottom="@dimen/dime_8dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/dime_8dp"
-        android:text="@string/house_details_appearance_property_grade"
-        android:textColor="@color/black"
-        android:textSize="@dimen/dime_16sp" />
-
-    <Spinner
-        android:id="@+id/property_grade_spinner"
-        android:layout_width="@dimen/dime_140dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/dime_8dp"
-        android:entries="@array/grade_level"
-        android:textColor="@color/black"
-        android:textSize="@dimen/dime_16sp" />
-</RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -182,9 +224,40 @@ android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_property_grade"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <Spinner
+            android:id="@+id/property_grade_spinner"
+            android:layout_width="@dimen/dime_140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:entries="@array/grade_level"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dime_8dp"
             android:text="@string/house_details_appearance_property_card"
-            android:layout_centerVertical="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
 
@@ -214,9 +287,9 @@ android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dime_8dp"
             android:text="@string/house_details_appearance_property_control"
-            android:layout_centerVertical="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
 
@@ -245,9 +318,9 @@ android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dime_8dp"
             android:text="@string/house_details_appearance_property_face"
-            android:layout_centerVertical="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
 
@@ -277,9 +350,9 @@ android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dime_8dp"
             android:text="@string/house_details_appearance_property_talkback"
-            android:layout_centerVertical="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
 
@@ -294,6 +367,7 @@ android:orientation="vertical">
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -307,9 +381,9 @@ android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dime_8dp"
             android:text="@string/house_details_appearance_property_close"
-            android:layout_centerVertical="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
 
@@ -324,6 +398,7 @@ android:orientation="vertical">
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -337,9 +412,9 @@ android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dime_8dp"
             android:text="@string/house_details_appearance_property_sanitation"
-            android:layout_centerVertical="true"
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
 
@@ -353,41 +428,153 @@ android:orientation="vertical">
             android:textColor="@color/black"
             android:textSize="@dimen/dime_16sp" />
     </RelativeLayout>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/dime_8dp"
-    android:layout_marginTop="@dimen/dime_8dp"
-    android:layout_marginEnd="@dimen/dime_8dp"
-    android:layout_marginBottom="@dimen/dime_8dp"
-    android:background="@drawable/shape_dialog_secen"
-    android:paddingTop="@dimen/dime_8dp"
-    android:paddingBottom="@dimen/dime_8dp">
 
-    <TextView
-        android:id="@+id/appearance_property_security_title"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/dime_8dp"
-        android:text="@string/house_details_appearance_property_security"
-        android:textColor="@color/black"
-        android:textSize="@dimen/dime_16sp" />
-
-    <TextView
-        android:id="@+id/appearance_security_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
         android:layout_marginEnd="@dimen/dime_8dp"
-        android:layout_toEndOf="@+id/appearance_property_security_title"
-        android:gravity="end"
-        android:text="@string/btn_checks"
-        android:textColor="@color/black"
-        android:textSize="@dimen/dime_16sp" />
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/appearance_property_security_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_property_security"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/appearance_security_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/appearance_property_security_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/appearance_anquanzidonghua_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_property_anquanzidonghua"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/appearance_anquanzidonghua_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/appearance_anquanzidonghua_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/appearance_guanli_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_property_guanli"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/appearance_guanli_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/appearance_guanli_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/appearance_weishenghuanjing_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_property_weishenghuanjing"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <TextView
+            android:id="@+id/appearance_weishenghuanjing_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:layout_toEndOf="@+id/appearance_weishenghuanjing_title"
+            android:gravity="end"
+            android:text="@string/btn_checks"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+    </RelativeLayout>
 
 </LinearLayout>
