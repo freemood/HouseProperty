@@ -30,6 +30,7 @@
     <string name="house_task_area_title">详情信息>>></string>
     <string name="house_task_area_name">小区名称:</string>
     <string name="house_task_area_adress">小区地址:</string>
+    <string name="house_task_area_alias">小区别名:</string>
     <string name="house_task_area_bolck_number">楼栋号:</string>
     <string name="house_task_area_household">单元:</string>
     <string name="house_task_area_defect_number">小区缺少%1$s信息</string>
@@ -112,7 +113,9 @@
     <string name="house_details_appearance_other_places_photos">公共部位照片</string>
     <string name="house_details_appearance_other_facilities_photos">公共设施照片</string>
     <string name="house_details_appearance_other_negative_photos">负面照片</string>
-
+    <string name="house_details_appearance_other_jingguan_photos">景观照片</string>
+    <string name="house_details_appearance_other_weisheng_photos">卫生环境照片</string>
+    <string name="house_details_appearance_other_daolu_photos">道路状况照片</string>
 
     <string name="house_poi_sheshi_photos">POI设施照片</string>
 

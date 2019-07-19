@@ -82,8 +82,11 @@ import static com.house.property.base.Constants.ATTRIBUTE_TYPE_COMMUNICATION;
 import static com.house.property.base.Constants.ATTRIBUTE_TYPE_COMM_MANAGEMENT;
 import static com.house.property.base.Constants.COMM_FACILITIES_PHOTO;
 import static com.house.property.base.Constants.COMM_GATEHOUSE_PHOTO;
+import static com.house.property.base.Constants.COMM_HEALTH_PHOTO;
 import static com.house.property.base.Constants.COMM_NEGATIVE_PHOTO;
 import static com.house.property.base.Constants.COMM_PLACES_PHOTO;
+import static com.house.property.base.Constants.COMM_RODE_PHOTO;
+import static com.house.property.base.Constants.COMM_SCENERY_PHOTO;
 import static com.house.property.base.Constants.PDSVO_LIST;
 import static com.house.property.base.Constants.PDS_TYPE_BUILD_STRUCTURE;
 import static com.house.property.base.Constants.PDS_TYPE_BUILD_TYPE;
@@ -142,6 +145,12 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     LinearLayout mGalleryFacilities;
     @BindView(R.id.id_gallery_negative)
     LinearLayout mGalleryNegative;
+    @BindView(R.id.id_gallery_daoluzhuangkuang)
+    LinearLayout mGalleryDaoluzhuangkuang;
+    @BindView(R.id.id_gallery_jingguan)
+    LinearLayout mGalleryJingguan;
+    @BindView(R.id.id_gallery_weisheng)
+    LinearLayout mGalleryWeisheng;
 
 
     @BindView(R.id.bolck_residential_gas_spinner)
@@ -264,6 +273,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     TextView appearanceGuanlizidonghuaTv;
     @BindView(R.id.appearance_weishenghuanjing_tv)
     TextView appearanceWeishenghuanjingTv;
+    @BindView(R.id.comm_alias_et)
+    TextView commAliasEt;
 
     private CommDetailsPresenter commDetailsPresenter = new CommDetailsPresenter(this, this);
     private CommDetailsUpdatePresenter commDetailsUpdatePresenter = new CommDetailsUpdatePresenter(this, this);
@@ -287,7 +298,6 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     private List<PdSVO> roadList = new ArrayList<>();
     private List<PdSVO> xiaoshouStateList = new ArrayList<>();
     private List<PdSVO> jianZhiXingJiList = new ArrayList<>();
-    private List<PdSVO> sd = new ArrayList<>();
 
     private List<AttributeVO> allAttributeList = new ArrayList<>();
     private List<PdSVO> equipmentTypeList = new ArrayList<>();
@@ -492,7 +502,6 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     protected void onResume() {
         super.onResume();
         getPermission();
-
     }
 
     @Override
@@ -508,7 +517,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
             R.id.appearance_house_attribute_tv, R.id.appearance_house_time_tv, R.id.appearance_security_tv,
             R.id.appearance_chuxin_time_tv,R.id.appearance_kejizhuzhai_type_tv,R.id.appearance_peijiansheshi_type_tv,
             R.id.appearance_xiaofangsheshi_type_tv,R.id.appearance_daoluzhuangkuang_type_tv,R.id.appearance_anquanzidonghua_tv,
-            R.id.appearance_guanli_tv,R.id.appearance_weishenghuanjing_tv
+            R.id.appearance_guanli_tv,R.id.appearance_weishenghuanjing_tv,R.id.add_daoluzhuangkuang_negative,
+            R.id.add_jingguan_negative,R.id.add_weisheng_negative,
     })
     public void onClick(View v) {
         switch (v.getId()) {
@@ -602,6 +612,18 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
             case R.id.appearance_weishenghuanjing_tv:
                 Utils.showMultiChoiceItems(this, weishengHuanjingList, appearanceWeishenghuanjingTv);
                 break;
+            case R.id.add_daoluzhuangkuang_negative:
+                PhotoUtils.takePicture(this, TAKE_PHOTO);
+                photoType = COMM_RODE_PHOTO;
+                break;
+            case R.id.add_jingguan_negative:
+                PhotoUtils.takePicture(this, TAKE_PHOTO);
+                photoType = COMM_SCENERY_PHOTO;
+                break;
+            case R.id.add_weisheng_negative:
+                PhotoUtils.takePicture(this, TAKE_PHOTO);
+                photoType = COMM_HEALTH_PHOTO;
+                break;
         }
     }
 
@@ -636,7 +658,7 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         String attributeCommunicationStr = attributeCommunicationEt.getText().toString();
         String propertyBrandStr = propertyBrandEt.getText().toString();
         String propertyWuyeshoufeiStr = propertyWuyeshoufeiEt.getText().toString();
-
+        String commAliasStr = commAliasEt.getText().toString();
 
         String appearanceRenfangtcwStr = appearanceRenfangtcwEt.getText().toString();
         String appearanceChanquantcwStr = appearanceChanquantcwEt.getText().toString();
@@ -833,6 +855,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         communityDetailsBean.setGisId(gisId);
         communityDetailsBean.setChanqquannianxian(appearancehouseChanquannianxianTvStr);
         communityDetailsBean.setCommPhotos(blackDimFileinfoVOList);
+        communityDetailsBean.setCommOthername(commAliasStr);
+
         CommunityManagementBean managementObj = commBean.getManagementObj();
         if (null == managementObj) {
             managementObj = new CommunityManagementBean();
@@ -990,6 +1014,12 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
             mGallery = mGalleryFacilities;
         } else if (COMM_NEGATIVE_PHOTO.equals(type)) {
             mGallery = mGalleryNegative;
+        }else if (COMM_RODE_PHOTO.equals(type)) {
+            mGallery = mGalleryDaoluzhuangkuang;
+        }else if (COMM_SCENERY_PHOTO.equals(type)) {
+            mGallery = mGalleryJingguan;
+        }else if (COMM_HEALTH_PHOTO.equals(type)) {
+            mGallery = mGalleryWeisheng;
         }
 
         if (null == mGallery) {
@@ -1041,6 +1071,7 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         appearanceDixiatcwEt.setText(reTextNull(bean.getUndergroundCarsTotal()));
         appearanceDixiatcwShoufeiEt.setText(reTextNull(bean.getUndergroundCarsCharge()));
         appearanceYoueryuanEt.setText(reTextNull(bean.getCommercialNurserySchool()));
+        commAliasEt.setText(reTextNull(bean.getCommOthername()));
         if (!TextUtils.isEmpty(bean.getJianzhuniandai())) {
             appearanceHouseTimeTv.setText(bean.getJianzhuniandai());
         }

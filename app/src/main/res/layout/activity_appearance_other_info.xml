@@ -197,6 +197,8 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -251,5 +253,171 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/other_daoluzhuangkuang_photos_negative_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_other_daolu_photos"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/dime_8dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/id_gallery_daoluzhuangkuang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <RelativeLayout
+            android:id="@+id/add_daoluzhuangkuang_negative"
+            android:layout_width="@dimen/dime_64dp"
+            android:layout_height="@dimen/dime_64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/setting_shape">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/icon_add4" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/other_jingguan_photos_negative_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_other_jingguan_photos"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/dime_8dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/id_gallery_jingguan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <RelativeLayout
+            android:id="@+id/add_jingguan_negative"
+            android:layout_width="@dimen/dime_64dp"
+            android:layout_height="@dimen/dime_64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/setting_shape">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/icon_add4" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/other_weisheng_photos_negative_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_details_appearance_other_weisheng_photos"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/dime_8dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/id_gallery_weisheng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <RelativeLayout
+            android:id="@+id/add_weisheng_negative"
+            android:layout_width="@dimen/dime_64dp"
+            android:layout_height="@dimen/dime_64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:background="@drawable/setting_shape">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/icon_add4" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>

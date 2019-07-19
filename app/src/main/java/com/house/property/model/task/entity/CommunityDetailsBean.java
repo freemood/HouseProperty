@@ -9,7 +9,8 @@ public class CommunityDetailsBean implements Serializable {
     private String id;
 
     private String commName;
-
+   /// @ApiModelProperty("小区别名")
+    private String commOthername;
     private String commAddress;
     private String shangquanname;
 
@@ -567,5 +568,13 @@ public class CommunityDetailsBean implements Serializable {
 
     public void setCommercialNurserySchool(String commercialNurserySchool) {
         this.commercialNurserySchool = commercialNurserySchool;
+    }
+
+    public String getCommOthername() {
+        return commOthername;
+    }
+
+    public void setCommOthername(String commOthername) {
+        this.commOthername = commOthername;
     }
 }
