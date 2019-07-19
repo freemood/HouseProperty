@@ -638,6 +638,9 @@ public class MainActivity extends BaseFragmentActivity implements IPdSListView, 
     @Override
     public void onMapClick(LatLng latLng) {
         if (zoomNumber > 15) {
+            for (Marker marker : markerList) {
+                marker.hideInfoWindow();
+            }
             return;
         }
 

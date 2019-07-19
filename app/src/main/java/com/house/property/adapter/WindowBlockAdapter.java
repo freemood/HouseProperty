@@ -64,8 +64,12 @@ public class WindowBlockAdapter implements AMap.InfoWindowAdapter, AMap.OnMarker
     // 返回 true 则表示接口已响应事件，否则返回false
     @Override
     public boolean onMarkerClick(Marker marker) {
-
-        return false;
+        if (null == marker) {
+            return false;
+        } else {
+            marker.showInfoWindow();
+            return true;
+        }
     }
 
     //绑定信息窗点击事件
