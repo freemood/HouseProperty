@@ -82,6 +82,7 @@ import top.zibin.luban.OnCompressListener;
 
 import static android.support.v4.content.PermissionChecker.PERMISSION_GRANTED;
 import static com.house.property.base.Constants.ATTRIBUTE_TYPE_DIM_BUILD;
+import static com.house.property.base.Constants.COMM_BAOYANG_PHOTO;
 import static com.house.property.base.Constants.COMM_ENTIRE_PHOTO;
 import static com.house.property.base.Constants.COMM_GATE_PHOTO;
 import static com.house.property.base.Constants.PDS_TYPE_BUILD_STRUCTURE;
@@ -231,11 +232,19 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
     LinearLayout mGalleryEntire;
     @BindView(R.id.task_moban)
     LinearLayout taskMobanll;
+    @BindView(R.id.gallery_neiwaiqiang)
+    LinearLayout mGalleryNeiwaiqiang;
 
     @BindView(R.id.task_fuyong1)
     TextView taskFuyongTvOne;
     @BindView(R.id.task_fuyong2)
     TextView taskFuyongTvTwo;
+
+    @BindView(R.id.details_teshu_no_et)
+    TextView detailsTeshuNoEt;
+    @BindView(R.id.details_teshuhu_et)
+    TextView detailsTeshuEt;
+
 
     private BuildDetailsAddPresenter buildDetailsAddPresenter = new BuildDetailsAddPresenter(this, this);
     private BuildDetailsQueryPresenter buildDetailsQueryPresenter = new BuildDetailsQueryPresenter(this, this);
@@ -301,6 +310,7 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
             wgs84Latitude = location.getLatitude();
         }
     };
+
     @Override
     protected int getContentViewId() {
         return R.layout.activity_task_bolck_details;
@@ -463,7 +473,14 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         super.onDestroy();
     }
 
-    @OnClick({R.id.task_fuyong1, R.id.task_fuyong2, R.id.attribute_tudi_time_tv, R.id.bolck_negative_tesc_tv, R.id.bolck_negative_wenhua_tv, R.id.add_saomiao_places_bolck_other_entire, R.id.add_saomiao_bolck_other_gate, R.id.bolck_negative_electric_tv, R.id.bolck_negative_sound_tv, R.id.bolck_negative_gas_tv, R.id.bolck_negative_light_tv, R.id.bolck_residential_science_tv, R.id.attribute_house_time_tv, R.id.page_back, R.id.page_right_rl})
+    @OnClick({R.id.task_fuyong1, R.id.task_fuyong2, R.id.attribute_tudi_time_tv,
+            R.id.bolck_negative_tesc_tv, R.id.bolck_negative_wenhua_tv,
+            R.id.add_saomiao_places_bolck_other_entire, R.id.add_saomiao_bolck_other_gate,
+            R.id.bolck_negative_electric_tv, R.id.bolck_negative_sound_tv,
+            R.id.bolck_negative_gas_tv, R.id.bolck_negative_light_tv,
+            R.id.bolck_residential_science_tv, R.id.attribute_house_time_tv,
+            R.id.page_back, R.id.page_right_rl, R.id.add_saomiao_places_bolck_other_neiwaiqiang
+    })
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bolck_negative_electric_tv:
@@ -506,6 +523,10 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
                 PhotoUtils.takePicture(this, TAKE_PHOTO);
                 photoType = COMM_ENTIRE_PHOTO;
                 break;
+            case R.id.add_saomiao_places_bolck_other_neiwaiqiang:
+                PhotoUtils.takePicture(this, TAKE_PHOTO);
+                photoType = COMM_BAOYANG_PHOTO;
+                break;
             case R.id.task_fuyong1:
                 refreshUi(fuyongOneVO);
                 break;
@@ -532,6 +553,9 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         String dongAttributeEtStr = dongAttributeEt.getText().toString();
         String attributeTdmjEtStr = attributeTdmjEt.getText().toString();
         String attributetudiTimeTvStr = attributetudiTimeTv.getText().toString();
+        String detailsTeshuNoEtStr = detailsTeshuNoEt.getText().toString();
+        String detailsTeshuEtStr = detailsTeshuEt.getText().toString();
+
         if (showNullToast(bolckNumberEtStr, getResources().getString(R.string.house_task_details_bolck_number))) {
             return;
         }
@@ -635,6 +659,9 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         buildDetailsVO.setIsHeat(residentialDinuanSpinnerStr);
         buildDetailsVO.setIsZhongyangkongtiao(residentialzyktSpinnerStr);
         buildDetailsVO.setIsRubbstation(negativeRefuseSpinnerStr);
+        buildDetailsVO.setSpecFloorinfoNo(detailsTeshuNoEtStr);
+        buildDetailsVO.setSpecialHousehold(detailsTeshuEtStr);
+
         buildDetailsVO.setCommPhotos(blackDimFileinfoVOList);
         GisObjVO gisObjVO = buildBean.getGisObjVO();
         if (null == gisObjVO || TextUtils.isEmpty(gisObjVO.getId())) {
@@ -735,8 +762,8 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
     private void showPhoto(PhotoBean photoBean) {
         String type = photoBean.getType();
         String path = photoBean.getPath();
-        String gaoDeLatitude  = String.valueOf(photoBean.getGaoDeLatitude());
-        String gaoDeLongitude= String.valueOf(photoBean.getGaoDeLongitude());
+        String gaoDeLatitude = String.valueOf(photoBean.getGaoDeLatitude());
+        String gaoDeLongitude = String.valueOf(photoBean.getGaoDeLongitude());
         String wgs84Latitude = String.valueOf(photoBean.getWgs84Latitude());
         String wgs84Longitude = String.valueOf(photoBean.getWgs84Longitude());
         File file = new File(path);
@@ -763,7 +790,7 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
                     public void onSuccess(File file) {
                         DimFileinfoVO dimFileinfoVO = new DimFileinfoVO();
                         dimFileinfoVO.setRelaSrckey(reTextNull(photoBean.getId()));
-                        dimFileinfoVO.setRelaSrctab("DIM_BUILD");
+                        dimFileinfoVO.setRelaSrctab(ATTRIBUTE_TYPE_DIM_BUILD);
                         dimFileinfoVO.setFileType(type);
                         dimFileinfoVO.setFileBtype("photo");
                         dimFileinfoVO.setFileSdcardPath(file.getPath());
@@ -878,6 +905,9 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         dongAttributeEt.setText(reTextNull(bean.getSalesLicense()));
         attributeTdmjEt.setText(reTextNull(bean.getLandArea()));
         attributetudiTimeTv.setText(reTextNull(bean.getLandDate()));
+        detailsTeshuNoEt.setText(reTextNull(bean.getSpecFloorinfoNo()));
+        detailsTeshuEt.setText(reTextNull(bean.getSpecialHousehold()));
+
         if (TextUtils.isEmpty(bean.getLandDate())) {
             attributetudiTimeTv.setText("请选择");
         }
@@ -999,7 +1029,10 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
             mGallery = mGalleryGatehouse;
         } else if (COMM_ENTIRE_PHOTO.equals(type)) {
             mGallery = mGalleryEntire;
+        } else if (COMM_BAOYANG_PHOTO.equals(type)) {
+            mGallery = mGalleryNeiwaiqiang;
         }
+
         if (null == mGallery) {
             return;
         }

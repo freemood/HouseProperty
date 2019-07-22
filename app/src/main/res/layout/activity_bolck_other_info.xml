@@ -147,4 +147,61 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_8dp"
+        android:layout_marginTop="@dimen/dime_8dp"
+        android:layout_marginEnd="@dimen/dime_8dp"
+        android:layout_marginBottom="@dimen/dime_8dp"
+        android:background="@drawable/shape_dialog_secen"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dime_8dp"
+        android:paddingBottom="@dimen/dime_8dp">
+
+        <TextView
+            android:id="@+id/other_gatehouse_photos_bolck_other_neiwaiqiang_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dime_8dp"
+            android:text="@string/house_task_bolck_other_neiwaiqiang"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dime_16sp" />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/dime_8dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/gallery_neiwaiqiang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <RelativeLayout
+            android:id="@+id/add_saomiao_places_bolck_other_neiwaiqiang"
+            android:layout_width="@dimen/dime_64dp"
+            android:layout_height="@dimen/dime_64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dime_8dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@drawable/setting_shape">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/icon_add4" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

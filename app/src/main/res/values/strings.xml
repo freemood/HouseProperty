@@ -190,7 +190,8 @@
     <string name="house_task_bolck_negative_tesc">特殊层</string>
 
     <string name="house_task_bolck_other_gate">大门照片</string>
-    <string name="house_task_bolck_other_entire">整幢楼照片</string>
+    <string name="house_task_bolck_other_entire">楼栋外观照片</string>
+    <string name="house_task_bolck_other_neiwaiqiang">楼栋保养照片</string>
 
     <string name="house_bulu_sheshi">设施补录</string>
     <string name="house_bulu_sheshi_name">设施名称</string>

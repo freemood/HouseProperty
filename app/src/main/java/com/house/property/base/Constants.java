@@ -83,6 +83,8 @@ public class Constants {
     public static final String COMM_GATE_PHOTO = "GATE_PHOTO";
     //整栋楼照片
     public static final String COMM_ENTIRE_PHOTO = "ENTIRE_PHOTO";
+    //楼栋保养照片
+    public static final String COMM_BAOYANG_PHOTO = "BAOYANG_PHOTO";
     //道路状况照片
     public static final String COMM_RODE_PHOTO = "RODE_PHOTO";
     //景观照片

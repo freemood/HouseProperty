@@ -979,7 +979,7 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
                     public void onSuccess(File file) {
                         DimFileinfoVO dimFileinfoVO = new DimFileinfoVO();
                         dimFileinfoVO.setRelaSrckey(reTextNull(photoBean.getId()));
-                        dimFileinfoVO.setRelaSrctab("DIM_COMMUNITY");
+                        dimFileinfoVO.setRelaSrctab(ATTRIBUTE_TYPE_COMMUNICATION);
                         dimFileinfoVO.setFileType(type);
                         dimFileinfoVO.setFileBtype("photo");
                         dimFileinfoVO.setFileSdcardPath(file.getPath());
