@@ -85,10 +85,17 @@ import static com.house.property.base.Constants.ATTRIBUTE_TYPE_DIM_BUILD;
 import static com.house.property.base.Constants.COMM_BAOYANG_PHOTO;
 import static com.house.property.base.Constants.COMM_ENTIRE_PHOTO;
 import static com.house.property.base.Constants.COMM_GATE_PHOTO;
+import static com.house.property.base.Constants.COMM_JUNGONG_PHOTO;
+import static com.house.property.base.Constants.PDSVO_LIST;
+import static com.house.property.base.Constants.PDS_TYPE_BOTTOM_TRAIT;
+import static com.house.property.base.Constants.PDS_TYPE_BUILD_ELECTRICITY_TYPE;
+import static com.house.property.base.Constants.PDS_TYPE_BUILD_MAINTENANCE;
 import static com.house.property.base.Constants.PDS_TYPE_BUILD_STRUCTURE;
 import static com.house.property.base.Constants.PDS_TYPE_BUILD_TYPE;
+import static com.house.property.base.Constants.PDS_TYPE_BUILD_WATER_TYPE;
 import static com.house.property.base.Constants.PDS_TYPE_DIAN_WULAN;
 import static com.house.property.base.Constants.PDS_TYPE_DINGCENG;
+import static com.house.property.base.Constants.PDS_TYPE_GREEN_BUILDING_STAR;
 import static com.house.property.base.Constants.PDS_TYPE_GUAN_WULAN;
 import static com.house.property.base.Constants.PDS_TYPE_HOUSE_ATTRIBUTE;
 import static com.house.property.base.Constants.PDS_TYPE_JIANZU_LEVEL;
@@ -224,6 +231,12 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
     Spinner negativeXinfengSpinner;
     @BindView(R.id.residential_tikong_spinner)
     Spinner negativeTikongSpinner;
+    @BindView(R.id.attribute_shuifei_spinner)
+    Spinner attributeShuifeiSpinner;
+    @BindView(R.id.attribute_dianfei_spinner)
+    Spinner attributeDianfeiSpinner;
+    @BindView(R.id.bolck_residential_lvsejianzxingji_spinner)
+    Spinner attributeLvsejianzxingjiSpinner;
 
 
     @BindView(R.id.gallery_bolck_other_gate)
@@ -234,6 +247,8 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
     LinearLayout taskMobanll;
     @BindView(R.id.gallery_neiwaiqiang)
     LinearLayout mGalleryNeiwaiqiang;
+    @BindView(R.id.gallery_jungong_time)
+    LinearLayout mGalleryJungongTime;
 
     @BindView(R.id.task_fuyong1)
     TextView taskFuyongTvOne;
@@ -244,6 +259,23 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
     TextView detailsTeshuNoEt;
     @BindView(R.id.details_teshuhu_et)
     TextView detailsTeshuEt;
+    @BindView(R.id.bolck_negative_loudongbaoyang_tv)
+    TextView bolckNegativeLoudongbaoyangTv;
+    @BindView(R.id.bolck_name_et)
+    TextView bolckNameEt;
+    @BindView(R.id.details_sp_szc_et)
+    TextView detailsSpSzcEt;
+    @BindView(R.id.details_zhufang_total_et)
+    TextView detailsZhufangTotalEt;
+    @BindView(R.id.details_feizhuzhai_et)
+    TextView detailsFeizhuzhaiEt;
+    @BindView(R.id.attribute_jungong_time_tv)
+    TextView attributeJungongTimeTv;
+    @BindView(R.id.details_ck_szc_et)
+    TextView detailsCkSzcEt;
+
+    @BindView(R.id.bolck_negative_dicengtedian_tv)
+    TextView bolckNegativeDicengtedianTv;
 
 
     private BuildDetailsAddPresenter buildDetailsAddPresenter = new BuildDetailsAddPresenter(this, this);
@@ -272,6 +304,10 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
     private List<PdSVO> jianzhuList = new ArrayList<>();
     private List<PdSVO> jianzhuTypeList = new ArrayList<>();
     private List<PdSVO> zhuangxiuList = new ArrayList<>();
+    private List<PdSVO> shuifeiList = new ArrayList<>();
+    private List<PdSVO> dianfeiList = new ArrayList<>();
+    private List<PdSVO> jianZhiXingJiList = new ArrayList<>();
+
 
     private List<AttributeVO> allAttributeList = new ArrayList<>();
     private List<PdSVO> dianwuranList = new ArrayList<>();
@@ -280,6 +316,8 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
     private List<PdSVO> guangwuranList = new ArrayList<>();
     private List<PdSVO> wenhuaList = new ArrayList<>();
     private List<PdSVO> teshucList = new ArrayList<>();
+    private List<PdSVO> loudongBaoyangList = new ArrayList<>();
+    private List<PdSVO> dixiacengList = new ArrayList<>();
     private List<AttributeVO> allUpdateAttributeList = new ArrayList<>();
     private BuildDetailsVO fuyongOneVO;
     private BuildDetailsVO fuyongTwoVO;
@@ -479,7 +517,9 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
             R.id.bolck_negative_electric_tv, R.id.bolck_negative_sound_tv,
             R.id.bolck_negative_gas_tv, R.id.bolck_negative_light_tv,
             R.id.bolck_residential_science_tv, R.id.attribute_house_time_tv,
-            R.id.page_back, R.id.page_right_rl, R.id.add_saomiao_places_bolck_other_neiwaiqiang
+            R.id.page_back, R.id.page_right_rl, R.id.add_saomiao_places_bolck_other_neiwaiqiang,
+            R.id.bolck_negative_loudongbaoyang_tv, R.id.attribute_jungong_time_tv, R.id.bolck_negative_dicengtedian_tv,
+            R.id.add_saomiao_places_bolck_other_jungong_time,
     })
     public void onClick(View v) {
         switch (v.getId()) {
@@ -527,11 +567,24 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
                 PhotoUtils.takePicture(this, TAKE_PHOTO);
                 photoType = COMM_BAOYANG_PHOTO;
                 break;
+            case R.id.add_saomiao_places_bolck_other_jungong_time:
+                PhotoUtils.takePicture(this, TAKE_PHOTO);
+                photoType = COMM_JUNGONG_PHOTO;
+                break;
             case R.id.task_fuyong1:
                 refreshUi(fuyongOneVO);
                 break;
             case R.id.task_fuyong2:
                 refreshUi(fuyongTwoVO);
+                break;
+            case R.id.bolck_negative_loudongbaoyang_tv:
+                Utils.showMultiChoiceItems(this, loudongBaoyangList, bolckNegativeLoudongbaoyangTv);
+                break;
+            case R.id.attribute_jungong_time_tv:
+                Utils.showDatePickerDialog(this, attributeJungongTimeTv);
+                break;
+            case R.id.bolck_negative_dicengtedian_tv:
+                Utils.showMultiChoiceItems(this, dixiacengList, bolckNegativeDicengtedianTv);
                 break;
         }
     }
@@ -555,22 +608,27 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         String attributetudiTimeTvStr = attributetudiTimeTv.getText().toString();
         String detailsTeshuNoEtStr = detailsTeshuNoEt.getText().toString();
         String detailsTeshuEtStr = detailsTeshuEt.getText().toString();
-
+        String bolckNameEtStr = bolckNameEt.getText().toString();
+        String detailsSpSzcEtStr = detailsSpSzcEt.getText().toString();
+        String detailsZhufangTotalEtStr = detailsZhufangTotalEt.getText().toString();
+        String detailsFeizhuzhaiEtStr = detailsFeizhuzhaiEt.getText().toString();
+        String attributeJungongTimeTvStr = attributeJungongTimeTv.getText().toString();
+        String detailsCkSzcEtStr = detailsCkSzcEt.getText().toString();
         if (showNullToast(bolckNumberEtStr, getResources().getString(R.string.house_task_details_bolck_number))) {
             return;
         }
         if (showNullToast(bolckCellnumberEtStr, getResources().getString(R.string.house_task_details_bolck_cellnumber))) {
             return;
         }
-        if (showNullToast(householdEtStr, getResources().getString(R.string.house_task_details_household))) {
-            return;
-        }
-        if (showNullToast(detailsSpacingEtStr, getResources().getString(R.string.house_task_details_spacing))) {
-            return;
-        }
-        if (showNullToast(detailsOrientationEtStr, getResources().getString(R.string.house_task_details_orientation))) {
-            return;
-        }
+//        if (showNullToast(householdEtStr, getResources().getString(R.string.house_task_details_household))) {
+//            return;
+//        }
+//        if (showNullToast(detailsSpacingEtStr, getResources().getString(R.string.house_task_details_spacing))) {
+//            return;
+//        }
+//        if (showNullToast(detailsOrientationEtStr, getResources().getString(R.string.house_task_details_orientation))) {
+//            return;
+//        }
 
 
         String detailsMaintainSpinnerStr = getSpinnerKey(detailsMaintainSpinner.getSelectedItem().toString(), zfbyList);
@@ -600,7 +658,9 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         String negativeMengjinSpinnerStr = getSpinnerKey(negativeMengjinSpinner.getSelectedItem().toString(), yseOrnoList);
         String negativeXinfengSpinnerStr = getSpinnerKey(negativeXinfengSpinner.getSelectedItem().toString(), yseOrnoList);
         String negativeTikongSpinnerStr = getSpinnerKey(negativeTikongSpinner.getSelectedItem().toString(), yseOrnoList);
-
+        String attributeShuifeiSpinnerStr = getSpinnerKey(attributeShuifeiSpinner.getSelectedItem().toString(), shuifeiList);
+        String attributeDianfeiSpinnerStr = getSpinnerKey(attributeDianfeiSpinner.getSelectedItem().toString(), dianfeiList);
+        String attributeLvsejianzxingjiSpinnerStr = getSpinnerKey(attributeLvsejianzxingjiSpinner.getSelectedItem().toString(), jianZhiXingJiList);
 
         String bolckNegativeElectricTvStr = bolckNegativeElectricTv.getText().toString();
         addUpdateAttributeList(allUpdateAttributeList, dianwuranList, bolckNegativeElectricTvStr, buildBean.getId(), ATTRIBUTE_TYPE_DIM_BUILD);
@@ -614,12 +674,17 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         addUpdateAttributeList(allUpdateAttributeList, wenhuaList, attributewenhuaTvStr, buildBean.getId(), ATTRIBUTE_TYPE_DIM_BUILD);
         String negativeTescTvStr = negativeTescTv.getText().toString();
         addUpdateAttributeList(allUpdateAttributeList, teshucList, negativeTescTvStr, buildBean.getId(), ATTRIBUTE_TYPE_DIM_BUILD);
+        String bolckNegativeLoudongbaoyangTvStr = bolckNegativeLoudongbaoyangTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, loudongBaoyangList, bolckNegativeLoudongbaoyangTvStr, buildBean.getId(), ATTRIBUTE_TYPE_DIM_BUILD);
+        String bolckNegativeDicengtedianTvStr = bolckNegativeDicengtedianTv.getText().toString();
+        addUpdateAttributeList(allUpdateAttributeList, dixiacengList, bolckNegativeDicengtedianTvStr, buildBean.getId(), ATTRIBUTE_TYPE_DIM_BUILD);
 
         BuildDetailsVO buildDetailsVO = buildBean;
         buildDetailsVO.setCommName(houseTaskNameStr);
         buildDetailsVO.setAttributeLits(allUpdateAttributeList);
         buildDetailsVO.setBuildCareinfo(detailsMaintainSpinnerStr);
         buildDetailsVO.setBuildNo(bolckNumberEtStr);
+        buildDetailsVO.setBuildName(bolckNameEtStr);
         buildDetailsVO.setBuildFloorcnt(Long.parseLong(detailsSpacingEtStr));
         buildDetailsVO.setUnderFloorcnt(Long.parseLong(detailsCommercialEtStr));
         buildDetailsVO.setGroundFloorno(commercialNumberEtStr);
@@ -630,7 +695,9 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         buildDetailsVO.setBuildType(attributeTypeSpinnerStr);
         buildDetailsVO.setSalesLicense(dongAttributeEtStr);
         buildDetailsVO.setLandArea(attributeTdmjEtStr);
-        buildDetailsVO.setLandDate(attributetudiTimeTvStr);
+        buildDetailsVO.setLandDate(attributetudiTimeTvStr.equals("请选择") ? "" : attributetudiTimeTvStr);
+        buildDetailsVO.setCompletionTime(attributeJungongTimeTvStr.equals("请选择") ? "" : attributeJungongTimeTvStr);
+
         buildDetailsVO.setBuildcellCnt(bolckCellnumberEtStr);
         buildDetailsVO.setBuildcellInfo(householdEtStr);
         buildDetailsVO.setBuildChaoxiang(detailsOrientationEtStr);
@@ -661,6 +728,15 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         buildDetailsVO.setIsRubbstation(negativeRefuseSpinnerStr);
         buildDetailsVO.setSpecFloorinfoNo(detailsTeshuNoEtStr);
         buildDetailsVO.setSpecialHousehold(detailsTeshuEtStr);
+        buildDetailsVO.setWaterChargesType(attributeShuifeiSpinnerStr);
+        buildDetailsVO.setElectricityChargesType(attributeDianfeiSpinnerStr);
+        buildDetailsVO.setBuildMaintenance(bolckNegativeLoudongbaoyangTvStr);
+        buildDetailsVO.setShopFloorno(detailsSpSzcEtStr);
+        buildDetailsVO.setHouseholdsTotal(detailsZhufangTotalEtStr);
+        buildDetailsVO.setNonResidential(detailsFeizhuzhaiEtStr);
+        buildDetailsVO.setGreenBuildingStar(attributeLvsejianzxingjiSpinnerStr);
+        buildDetailsVO.setGarageFloorno(detailsCkSzcEtStr);
+        buildDetailsVO.setBottomCharacteristics(bolckNegativeDicengtedianTvStr);
 
         buildDetailsVO.setCommPhotos(blackDimFileinfoVOList);
         GisObjVO gisObjVO = buildBean.getGisObjVO();
@@ -907,9 +983,17 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         attributetudiTimeTv.setText(reTextNull(bean.getLandDate()));
         detailsTeshuNoEt.setText(reTextNull(bean.getSpecFloorinfoNo()));
         detailsTeshuEt.setText(reTextNull(bean.getSpecialHousehold()));
-
+        bolckNameEt.setText(reTextNull(bean.getBuildName()));
+        detailsSpSzcEt.setText(reTextNull(bean.getShopFloorno()));
+        detailsZhufangTotalEt.setText(reTextNull(bean.getHouseholdsTotal()));
+        detailsFeizhuzhaiEt.setText(reTextNull(bean.getNonResidential()));
+        attributeJungongTimeTv.setText(reTextNull(bean.getCompletionTime()));
+        detailsCkSzcEt.setText(reTextNull(bean.getGarageFloorno()));
         if (TextUtils.isEmpty(bean.getLandDate())) {
             attributetudiTimeTv.setText("请选择");
+        }
+        if (TextUtils.isEmpty(bean.getCompletionTime())) {
+            attributeJungongTimeTv.setText("请选择");
         }
 
 //        /attributeHouseTimeTv.setText(reTextNull(bean.getBuildDate()));
@@ -929,7 +1013,13 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         guangwuranList = getTypeList(Constants.PDSVO_LIST, PDS_TYPE_GUAN_WULAN);
         wenhuaList = getTypeList(Constants.PDSVO_LIST, PDS_TYPE_WENHUA_YINXIAN);
         teshucList = getTypeList(Constants.PDSVO_LIST, PDS_TYPE_TESUCEN_TEDIAN);
+        shuifeiList = getTypeList(Constants.PDSVO_LIST, PDS_TYPE_BUILD_WATER_TYPE);
+        dianfeiList = getTypeList(Constants.PDSVO_LIST, PDS_TYPE_BUILD_ELECTRICITY_TYPE);
+        loudongBaoyangList = getTypeList(Constants.PDSVO_LIST, PDS_TYPE_BUILD_MAINTENANCE);
+        jianZhiXingJiList = getTypeList(PDSVO_LIST, PDS_TYPE_GREEN_BUILDING_STAR);
+        dixiacengList = getTypeList(PDSVO_LIST, PDS_TYPE_BOTTOM_TRAIT);
 
+        initSpinner(this, attributeLvsejianzxingjiSpinner, jianZhiXingJiList, bean.getGreenBuildingStar());
         initSpinner(this, detailsMaintainSpinner, zfbyList, bean.getBuildCareinfo());
         initSpinner(this, detailsWallSpinner, wallList, bean.getExtWall());
         initSpinner(this, detailsTopSpinner, topList, bean.getTopFloorinfo());
@@ -958,6 +1048,10 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
         initSpinner(this, negativeMengjinSpinner, yseOrnoList, bean.getIsMengjin());
         initSpinner(this, negativeXinfengSpinner, yseOrnoList, bean.getIsXinfeng());
         initSpinner(this, negativeTikongSpinner, yseOrnoList, bean.getIsTikong());
+        initSpinner(this, attributeShuifeiSpinner, shuifeiList, bean.getWaterChargesType());
+        initSpinner(this, attributeDianfeiSpinner, dianfeiList, bean.getElectricityChargesType());
+
+
         allAttributeList = bean.getAttributeLits();
         if (null != allAttributeList && 0 != allAttributeList.size()) {
             getAttributeTypeList(allAttributeList, PDS_TYPE_DIAN_WULAN, bolckNegativeElectricTv);
@@ -966,6 +1060,9 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
             getAttributeTypeList(allAttributeList, PDS_TYPE_GUAN_WULAN, bolckNegativeLightTv);
             getAttributeTypeList(allAttributeList, PDS_TYPE_WENHUA_YINXIAN, attributewenhuaTv);
             getAttributeTypeList(allAttributeList, PDS_TYPE_TESUCEN_TEDIAN, negativeTescTv);
+            getAttributeTypeList(allAttributeList, PDS_TYPE_BUILD_MAINTENANCE, bolckNegativeLoudongbaoyangTv);
+            getAttributeTypeList(allAttributeList, PDS_TYPE_BOTTOM_TRAIT, bolckNegativeDicengtedianTv);
+
         } else {
             bolckNegativeElectricTv.setText("请选择");
             bolckNegativeSoundTv.setText("请选择");
@@ -973,6 +1070,8 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
             bolckNegativeLightTv.setText("请选择");
             attributewenhuaTv.setText("请选择");
             negativeTescTv.setText("请选择");
+            bolckNegativeLoudongbaoyangTv.setText("请选择");
+            bolckNegativeDicengtedianTv.setText("请选择");
         }
     }
 
@@ -1031,6 +1130,8 @@ public class TaskBolckDetailsInfoActivity extends BaseFragmentActivity implement
             mGallery = mGalleryEntire;
         } else if (COMM_BAOYANG_PHOTO.equals(type)) {
             mGallery = mGalleryNeiwaiqiang;
+        }else if (COMM_JUNGONG_PHOTO.equals(type)) {
+            mGallery = mGalleryJungongTime;
         }
 
         if (null == mGallery) {

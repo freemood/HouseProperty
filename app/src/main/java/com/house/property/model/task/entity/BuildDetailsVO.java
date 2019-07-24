@@ -7,119 +7,119 @@ import java.util.List;
 
 public class BuildDetailsVO implements Serializable {
 
-    ////@ApiModelProperty("栋id")
+    //@ApiModelProperty("栋id")
     private String id;
-    ////@ApiModelProperty("栋号")
+    //@ApiModelProperty("栋号")
     private String buildNo;
-    ////@ApiModelProperty("栋名称")
+    //@ApiModelProperty("栋名称")
     private String buildName;
-    ////@ApiModelProperty("栋楼层总数")
+    //@ApiModelProperty("栋楼层总数")
     private Long buildFloorcnt;
-    ////@ApiModelProperty("小区ID")
+    //@ApiModelProperty("小区ID")
     private String commId;
-    ////@ApiModelProperty("小区名称")
+    //@ApiModelProperty("小区名称")
     private String commName;
-    ////@ApiModelProperty("栋建成年代")
+    //@ApiModelProperty("栋建成年代")
     private Date buildDate;
-    ////@ApiModelProperty("地下层数")
+    //@ApiModelProperty("地下层数")
     private Long underFloorcnt;
-    ////@ApiModelProperty("地面所在层")
+    //@ApiModelProperty("地面所在层")
     private String groundFloorno;
-    ////@ApiModelProperty("顶层所在层")
+    //@ApiModelProperty("顶层所在层")
     private String topFloorno;
-    ////@ApiModelProperty("住宅所在层")
+    //@ApiModelProperty("住宅所在层")
     private String houseFloorno;
-    ////@ApiModelProperty("建筑结构")
+    //@ApiModelProperty("建筑结构")
     private String buildStructure;
-    ////@ApiModelProperty("建筑等级 ")
+    //@ApiModelProperty("建筑等级 ")
     private String buildLevel;
-    ////@ApiModelProperty("建筑类型")
+    //@ApiModelProperty("建筑类型")
     private String buildType;
-    ////@ApiModelProperty("销售许可证")
+    //@ApiModelProperty("销售许可证")
     private String salesLicense;
-    ////@ApiModelProperty("土地面积")
+    //@ApiModelProperty("土地面积")
     private String landArea;
-    ////@ApiModelProperty("土地时间")
+    //@ApiModelProperty("土地时间")
     private String landDate;
-    ////@ApiModelProperty("空间数据ID")
+    //@ApiModelProperty("空间数据ID")
     private String gisId;
-    ////@ApiModelProperty("单元数")
+    //@ApiModelProperty("单元数")
     private String buildcellCnt;
-    ////@ApiModelProperty("几梯几户")
+    //@ApiModelProperty("几梯几户")
     private String buildcellInfo;
-    ////@ApiModelProperty("朝向")
+    //@ApiModelProperty("朝向")
     private String buildChaoxiang;
-    ////@ApiModelProperty("住房属性")
+    //@ApiModelProperty("住房属性")
     private String buildAttr;
-    ////@ApiModelProperty("商铺所在层")
+    //@ApiModelProperty("商铺所在层")
     private String shopFloorno;
-    ////@ApiModelProperty("住房保养情况")
+    //@ApiModelProperty("住房保养情况")
     private String buildCareinfo;
-    ////@ApiModelProperty("外墙情况")
+    //@ApiModelProperty("外墙情况")
     private String extWall;
-    ////@ApiModelProperty("顶层情况")
+    //@ApiModelProperty("顶层情况")
     private String topFloorinfo;
-    ////@ApiModelProperty("是否景观楼")
+    //@ApiModelProperty("是否景观楼")
     private String isJingguanlou;
-    ////@ApiModelProperty("装修程度")
+    //@ApiModelProperty("装修程度")
     private String zhuangxiuInfo;
-    ////@ApiModelProperty("是否新风")
+    //@ApiModelProperty("是否新风")
     private String isXinfeng;
-    ////@ApiModelProperty("是否集中供暖")
+    //@ApiModelProperty("是否集中供暖")
     private String isJizhonggongnuan;
-    ////@ApiModelProperty("是否门禁系统")
+    //@ApiModelProperty("是否门禁系统")
     private String isMengjin;
-    ////@ApiModelProperty("是否梯控")
+    //@ApiModelProperty("是否梯控")
     private String isTikong;
-    ////@ApiModelProperty("是否安防")
+    //@ApiModelProperty("是否安防")
     private String isAnfang;
-    ////@ApiModelProperty("是否有公共娱乐空间")
+    //@ApiModelProperty("是否有公共娱乐空间")
     private String isPubFunspace;
-    ////@ApiModelProperty("是否消防设施")
+    //@ApiModelProperty("是否消防设施")
     private String isFpd;
-    ////@ApiModelProperty("是否有车库")
+    //@ApiModelProperty("是否有车库")
     private String isGarage;
-    ////@ApiModelProperty("是否有储藏室")
+    //@ApiModelProperty("是否有储藏室")
     private String isStoreroom;
-    ////@ApiModelProperty("是否二次供水")
+    //@ApiModelProperty("是否二次供水")
     private String isWaterSupp;
-    ////@ApiModelProperty("是否供电")
+    //@ApiModelProperty("是否供电")
     private String isEpowerSupp;
-    ////@ApiModelProperty("是否供气")
+    //@ApiModelProperty("是否供气")
     private String isGasSupp;
-    ////@ApiModelProperty("是否供热")
+    //@ApiModelProperty("是否供热")
     private String isHeatSupp;
-    ////@ApiModelProperty("是否阁楼")
+    //@ApiModelProperty("是否阁楼")
     private String isGelou;
-    ////@ApiModelProperty("是否电梯")
+    //@ApiModelProperty("是否电梯")
     private String isLift;
-    ////@ApiModelProperty("是否地暖")
+    //@ApiModelProperty("是否地暖")
     private String isHeat;
-    ////@ApiModelProperty("是否中央空调")
+    //@ApiModelProperty("是否中央空调")
     private String isZhongyangkongtiao;
-    ////@ApiModelProperty("特殊层")
+    //@ApiModelProperty("特殊层")
     private String specFloorinfo;
-    ////@ApiModelProperty("电污染")
+    //@ApiModelProperty("电污染")
     private String epowerPollinfo;
-    ////@ApiModelProperty("是否有垃圾站")
+    //@ApiModelProperty("是否有垃圾站")
     private String isRubbstation;
-    ////@ApiModelProperty("噪音污染 ")
+    //@ApiModelProperty("噪音污染 ")
     private String noisePollinfo;
-    ////@ApiModelProperty("气味污染")
+    //@ApiModelProperty("气味污染")
     private String smellPollinfo;
-    ////@ApiModelProperty("光污染")
+    //@ApiModelProperty("光污染")
     private String rayPollinfo;
-    ////@ApiModelProperty("文化影响")
+    //@ApiModelProperty("文化影响")
     private String culturePollinfo;
-    ////@ApiModelProperty("备注")
+    //@ApiModelProperty("备注")
     private String remark;
     private List<PdSVO> pdSList;
-    ////@ApiModelProperty("栋楼空间数据")
+    //@ApiModelProperty("栋楼空间数据")
     private GisObjVO gisObjVO;
-    ////@ApiModelProperty("多选项对象")
+    //@ApiModelProperty("多选项对象")
     private List<AttributeVO> attributeLits;
     private String taskId;
-   // //@ApiModelProperty("照片")
+    // @ApiModelProperty("照片")
     private List<DimFileinfoVO> commPhotos;
     //@ApiModelProperty("水费类型")
     private String waterChargesType;
@@ -129,10 +129,23 @@ public class BuildDetailsVO implements Serializable {
     private String deliveryDecoration;
     //@ApiModelProperty("楼栋保养（内外墙）")
     private String buildMaintenance;
-    //@ApiModelProperty("特殊层号")
+    // @ApiModelProperty("特殊层号")
     private String specFloorinfoNo;
     //@ApiModelProperty("特殊户")
     private String specialHousehold;
+    //@ApiModelProperty("住房总户数")
+    private String householdsTotal;
+    //@ApiModelProperty("非住宅套数")
+    private String nonResidential;
+    //@ApiModelProperty("栋竣工时间")
+    private String completionTime;
+    //@ApiModelProperty("绿色建筑等级")
+    private String greenBuildingStar;
+    //@ApiModelProperty("车库所在层")
+    private String garageFloorno;
+    //@ApiModelProperty("底层特点")
+    private String bottomCharacteristics;
+
     public String getId() {
         return id;
     }
@@ -643,5 +656,53 @@ public class BuildDetailsVO implements Serializable {
 
     public void setSpecialHousehold(String specialHousehold) {
         this.specialHousehold = specialHousehold;
+    }
+
+    public String getHouseholdsTotal() {
+        return householdsTotal;
+    }
+
+    public void setHouseholdsTotal(String householdsTotal) {
+        this.householdsTotal = householdsTotal;
+    }
+
+    public String getNonResidential() {
+        return nonResidential;
+    }
+
+    public void setNonResidential(String nonResidential) {
+        this.nonResidential = nonResidential;
+    }
+
+    public String getCompletionTime() {
+        return completionTime;
+    }
+
+    public void setCompletionTime(String completionTime) {
+        this.completionTime = completionTime;
+    }
+
+    public String getGreenBuildingStar() {
+        return greenBuildingStar;
+    }
+
+    public void setGreenBuildingStar(String greenBuildingStar) {
+        this.greenBuildingStar = greenBuildingStar;
+    }
+
+    public String getGarageFloorno() {
+        return garageFloorno;
+    }
+
+    public void setGarageFloorno(String garageFloorno) {
+        this.garageFloorno = garageFloorno;
+    }
+
+    public String getBottomCharacteristics() {
+        return bottomCharacteristics;
+    }
+
+    public void setBottomCharacteristics(String bottomCharacteristics) {
+        this.bottomCharacteristics = bottomCharacteristics;
     }
 }

@@ -275,6 +275,9 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     TextView appearanceWeishenghuanjingTv;
     @BindView(R.id.comm_alias_et)
     TextView commAliasEt;
+    @BindView(R.id.attribute_jianzhumianji_et)
+    TextView attributeJianzhumianjiEt;
+
 
     private CommDetailsPresenter commDetailsPresenter = new CommDetailsPresenter(this, this);
     private CommDetailsUpdatePresenter commDetailsUpdatePresenter = new CommDetailsUpdatePresenter(this, this);
@@ -659,6 +662,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         String propertyBrandStr = propertyBrandEt.getText().toString();
         String propertyWuyeshoufeiStr = propertyWuyeshoufeiEt.getText().toString();
         String commAliasStr = commAliasEt.getText().toString();
+        String attributeJianzhumianjiEtStr = attributeJianzhumianjiEt.getText().toString();
+
 
         String appearanceRenfangtcwStr = appearanceRenfangtcwEt.getText().toString();
         String appearanceChanquantcwStr = appearanceChanquantcwEt.getText().toString();
@@ -856,6 +861,7 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         communityDetailsBean.setChanqquannianxian(appearancehouseChanquannianxianTvStr);
         communityDetailsBean.setCommPhotos(blackDimFileinfoVOList);
         communityDetailsBean.setCommOthername(commAliasStr);
+        communityDetailsBean.setJianzhuMianji(attributeJianzhumianjiEtStr);
 
         CommunityManagementBean managementObj = commBean.getManagementObj();
         if (null == managementObj) {
@@ -1072,6 +1078,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
         appearanceDixiatcwShoufeiEt.setText(reTextNull(bean.getUndergroundCarsCharge()));
         appearanceYoueryuanEt.setText(reTextNull(bean.getCommercialNurserySchool()));
         commAliasEt.setText(reTextNull(bean.getCommOthername()));
+        attributeJianzhumianjiEt.setText(reTextNull(bean.getJianzhuMianji()));
+
         if (!TextUtils.isEmpty(bean.getJianzhuniandai())) {
             appearanceHouseTimeTv.setText(bean.getJianzhuniandai());
         }

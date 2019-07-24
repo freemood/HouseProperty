@@ -91,6 +91,8 @@ public class Constants {
     public static final String COMM_SCENERY_PHOTO = "SCENERY_PHOTO";
     //卫生环境照片
     public static final String COMM_HEALTH_PHOTO = "HEALTH_PHOTO";
+    //楼栋竣工时间照片
+    public static final String COMM_JUNGONG_PHOTO = "JUNGONG_PHOTO";
 
     //poi照片
     public static final String COMM_POI_PHOTO = "POI_PHOTO";
@@ -115,4 +117,12 @@ public class Constants {
     public static final String PDS_TYPE_SANITARY = "SANITARY";
     //楼栋保养（内外墙）
     public static final String PDS_TYPE_BUILD_MAINTENANCE = "BUILD_MAINTENANCE";
+
+    //水费类型
+    public static final String PDS_TYPE_BUILD_WATER_TYPE = "WATER_TYPE";
+    //电费类型
+    public static final String PDS_TYPE_BUILD_ELECTRICITY_TYPE = "ELECTRICITY_TYPE";
+    //底层特点
+    public static final String PDS_TYPE_BOTTOM_TRAIT= "BOTTOM_TRAIT";
+
 }
