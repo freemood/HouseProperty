@@ -93,6 +93,10 @@ public class Constants {
     public static final String COMM_HEALTH_PHOTO = "HEALTH_PHOTO";
     //楼栋竣工时间照片
     public static final String COMM_JUNGONG_PHOTO = "JUNGONG_PHOTO";
+    //供暖
+    public static final String COMM_HEAT_SUPP = "HEAT_SUPP";
+    //供气
+    public static final String COMM_GAS_SUPP = "GAS_SUPP";
 
     //poi照片
     public static final String COMM_POI_PHOTO = "POI_PHOTO";

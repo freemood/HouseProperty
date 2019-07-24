@@ -81,8 +81,10 @@ import static android.support.v4.content.PermissionChecker.PERMISSION_GRANTED;
 import static com.house.property.base.Constants.ATTRIBUTE_TYPE_COMMUNICATION;
 import static com.house.property.base.Constants.ATTRIBUTE_TYPE_COMM_MANAGEMENT;
 import static com.house.property.base.Constants.COMM_FACILITIES_PHOTO;
+import static com.house.property.base.Constants.COMM_GAS_SUPP;
 import static com.house.property.base.Constants.COMM_GATEHOUSE_PHOTO;
 import static com.house.property.base.Constants.COMM_HEALTH_PHOTO;
+import static com.house.property.base.Constants.COMM_HEAT_SUPP;
 import static com.house.property.base.Constants.COMM_NEGATIVE_PHOTO;
 import static com.house.property.base.Constants.COMM_PLACES_PHOTO;
 import static com.house.property.base.Constants.COMM_RODE_PHOTO;
@@ -301,6 +303,8 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
     private List<PdSVO> roadList = new ArrayList<>();
     private List<PdSVO> xiaoshouStateList = new ArrayList<>();
     private List<PdSVO> jianZhiXingJiList = new ArrayList<>();
+    private List<PdSVO> gongNuanJiList = new ArrayList<>();
+    private List<PdSVO> gongQiJiList = new ArrayList<>();
 
     private List<AttributeVO> allAttributeList = new ArrayList<>();
     private List<PdSVO> equipmentTypeList = new ArrayList<>();
@@ -1087,10 +1091,12 @@ public class TaskDetailsInfoActivity extends BaseFragmentActivity implements IFi
             appearanceChuxinTimeTv.setText(bean.getNewDistrict());
         }
         yseOrnoList = getTypeList(PDSVO_LIST, PDS_TYPE_YN);
+        gongQiJiList = getTypeList(PDSVO_LIST, COMM_GAS_SUPP);
+        gongNuanJiList = getTypeList(PDSVO_LIST, COMM_HEAT_SUPP);
 //        initSpinner(bolckResidentialWaterSpinner, yseOrnoList, commBean.getWaterSupp());
 //        initSpinner(bolckResidentialElectricSpinner, yseOrnoList, commBean.getEpowerSupp());
-        initSpinner(this, bolckResidentialGasSpinner, yseOrnoList, bean.getGasSupp());
-        initSpinner(this, bolckResidentialHeatSpinner, yseOrnoList, bean.getHeatSupp());
+        initSpinner(this, bolckResidentialGasSpinner, gongQiJiList, bean.getGasSupp());
+        initSpinner(this, bolckResidentialHeatSpinner, gongNuanJiList, bean.getHeatSupp());
         roadList = getTypeList(PDSVO_LIST, PDS_TYPE_ROAD);
         initSpinner(this, propertyRoadSpinner, roadList, bean.getLumianQingkuang());
         jianZhiXingJiList = getTypeList(PDSVO_LIST, PDS_TYPE_GREEN_BUILDING_STAR);
